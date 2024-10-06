@@ -1,0 +1,45 @@
+/* Make header bigger */
+.navbar {
+    padding: 1.5rem 1rem; 
+    font-size: 1.25rem;    
+    background-color: #f8f9fa; 
+}
+
+/* Ensure the footer stays at the bottom of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1; /* Make the main content area expand to fill available space */
+}
+
+.logged-in {
+    color: #ffcc00 !important;
+    font-weight: bold;
+}
+
+.carousel-item img {
+    object-fit: cover; 
+    width: 100%; 
+    height: 100vh; 
+}
+
+.footer {
+    margin-top: 0; /* Push the footer to the bottom */
+    padding: 0;
+    background-color: #f8f9fa; /* Optional: adjust background color */
+    text-align: center; /* Center the content */
+}
+
+/* Optional styling for footer */
+.footer h5 {
+    font-size: 1.25rem;
+}

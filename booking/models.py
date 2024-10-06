@@ -23,6 +23,7 @@ class Booking(models.Model):
     time = models.TimeField()
     guests = models.IntegerField()
     special_request = models.TextField(blank=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True) 
 
     STATUS_CHOICES = (
         ('pending', 'Pending'),
@@ -30,6 +31,9 @@ class Booking(models.Model):
         ('canceled', 'Canceled'),
     )
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    
+    class Meta:
+        ordering = ["-created_on"]
 
     def __str__(self):
         return f"{self.customer.user.username} - {self.date} at {self.time}"

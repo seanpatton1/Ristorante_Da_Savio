@@ -10,3 +10,6 @@ def booking_list(request):
 def make_booking(request):
     # Form processing logic here
     return render(request, '#')
+
+def booking_view(request):
+    return render(request, 'booking/booking.html')
