@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Menu Header Section -->
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="display-4 font-weight-bold">Our Menu</h2>
+            <p class="lead mt-3">A selection of authentic Italian dishes made with love and the finest ingredients</p>
+        </div>
+    </div>
+
+    <!-- Starters Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="font-weight-bold">Starters</h3>
+            <hr class="mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex justify-content-between">
+                    <span>Bruschetta al Pomodoro</span>
+                    <span class="text-muted">£6.50</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Caprese Salad</span>
+                    <span class="text-muted">£7.50</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Garlic Mushrooms</span>
+                    <span class="text-muted">£5.95</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pasta Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="font-weight-bold">Pasta</h3>
+            <hr class="mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex justify-content-between">
+                    <span>Spaghetti Carbonara</span>
+                    <span class="text-muted">£11.95</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Fettuccine Alfredo</span>
+                    <span class="text-muted">£12.50</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Lasagna al Forno</span>
+                    <span class="text-muted">£12.95</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pizza Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="font-weight-bold">Pizza</h3>
+            <hr class="mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex justify-content-between">
+                    <span>Margherita</span>
+                    <span class="text-muted">£10.50</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Quattro Stagioni</span>
+                    <span class="text-muted">£13.00</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Diavola</span>
+                    <span class="text-muted">£12.75</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="font-weight-bold">Desserts</h3>
+            <hr class="mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex justify-content-between">
+                    <span>Tiramisu</span>
+                    <span class="text-muted">£6.95</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Panna Cotta</span>
+                    <span class="text-muted">£6.50</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span>Gelato Assortito</span>
+                    <span class="text-muted">£5.95</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a href="{% url 'booking' %}" class="btn btn-lg btn-primary">Book Your Table Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
