@@ -35,11 +35,34 @@ main {
 .footer {
     margin-top: 0; /* Push the footer to the bottom */
     padding: 0;
-    background-color: #f8f9fa; /* Optional: adjust background color */
+    background-color: #f8f9fa;
     text-align: center; /* Center the content */
 }
 
 /* Optional styling for footer */
 .footer h5 {
     font-size: 1.25rem;
+}
+
+/* Custom styles for carousel */
+
+.custom-carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.custom-carousel-caption h3 {
+    font-size: 3rem; /* Adjust this for larger text */
+    font-weight: bold;
+}
+
+.custom-carousel-caption p {
+    font-size: 2rem; /* Adjust this for larger text */
+}
+
+.text-white {
+    color: #fff;
 }

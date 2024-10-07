@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Reservations Header Section -->
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="display-4 font-weight-bold">Make a Reservation</h2>
+            <p class="lead mt-3">Book your table at Ristorante Da Savio and experience authentic Italian cuisine</p>
+        </div>
+    </div>
+
+    <!-- Availability Calendar -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h3 class="font-weight-bold">Availability Calendar</h3>
+            <div id="calendar" class="mt-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- FullCalendar JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+<!-- Link to the external JavaScript file -->
+<script src="{% static 'js/calendar.js' %}"></script>
+{% endblock %}
