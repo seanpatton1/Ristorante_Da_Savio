@@ -24,6 +24,7 @@ main {
 .logged-in {
     color: #ffcc00 !important;
     font-weight: bold;
+    padding-left: 15px;
 }
 
 .carousel-item img {
@@ -65,4 +66,61 @@ main {
 
 .text-white {
     color: #fff;
+}
+
+/* Style for the login form */
+form {
+    background-color: #f8f9fa;  /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Style logout button to override form styling */
+
+#logout-form {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Ensure the form behaves like an inline element */
+.logout-button-form {
+    display: inline;
+}
+
+/* Styles for the logout button */
+.logout-button {
+    border: 1px solid #f8d7da;  
+    background-color: transparent;  
+    padding: 5px 10px;  
+    border-radius: 4px;  
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;  
+    box-shadow: none;  
+    cursor: pointer;  
+    font-size: 1rem;
+}
+
+/* Hover effect for better user interaction */
+.logout-button:hover {
+    background-color: #f8d7da;  /* Light red background on hover */
+    color: #ffffff;  /* White text on hover */
+    border-color: #f5c6cb;  /* Slightly darker border on hover */
 }

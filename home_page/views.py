@@ -10,3 +10,7 @@ def about(request):
 
 def menu(request):
     return render(request, 'home_page/menu.html')
+
+def custom_logout_view(request):
+    logout(request)  # Logs the user out
+    return render(request, 'account/logout.html')

@@ -1,5 +1,11 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'about' as about_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +17,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your custom CSS -->
     <link rel="stylesheet" href="https://kit.fontawesome.com/17fadc6c88.js"> <!-- Font Awesome for social icons -->
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
 </head>
 
@@ -41,14 +47,20 @@
                 <!-- Added login/logout and user info -->
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <span class="navbar-text mr-3 logged-in">You are logged in as Sean Patton</span>
+                    <span class="navbar-text mr-3 logged-in">You are logged in as {{ user.username }}</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-lg btn-outline-danger ml-3" href="">Logout</a>
+                    <form method="post" action="{% url 'custom_logout' %}" id="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link text-light p-0">Logout</button>
+                    </form>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-lg btn-outline-primary ml-3" href="">Login</a>
+                    <a class="nav-link btn btn-lg btn-outline-primary ml-3" href="{{ login_url }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-lg btn-outline-primary ml-3" href="{{ signup_url }}">Sign Up</a>
                 </li>
                 {% endif %}
                 <!-- End of login/logout and user info -->
@@ -62,31 +74,31 @@
         {% endblock %}
     </main>
 
-<!-- Footer -->
-<footer class="footer bg-dark text-light py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Quick Links Column -->
-            <div class="col-md-6">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light">Home</a></li>
-                    <li><a href="#" class="text-light">About Us</a></li>
-                    <li><a href="#" class="text-light">Reservations</a></li>
-                    <li><a href="#" class="text-light">Menu</a></li>
-                </ul>
-            </div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Quick Links Column -->
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Reservations</a></li>
+                        <li><a href="#" class="text-light">Menu</a></li>
+                    </ul>
+                </div>
 
-            <!-- Follow Us Column (Social Media) -->
-            <div class="col-md-6 text-right">
-                <h5>Follow Us</h5>
-                <a href="#" class="text-light mr-2"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="#" class="text-light mr-2"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
+                <!-- Follow Us Column (Social Media) -->
+                <div class="col-md-6 text-right">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-light mr-2"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="text-light mr-2"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
