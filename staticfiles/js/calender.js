@@ -13,7 +13,7 @@ $(document).ready(function() {
                 url: '/booking/get-bookings/', // URL of the Django view that returns JSON data with reservations
                 dataType: 'json',
                 success: function(data) {
-                    var events = [];
+                    let events = [];
                     $(data).each(function() {
                         events.push({
                             title: 'Reserved',
@@ -27,7 +27,7 @@ $(document).ready(function() {
         },
         // Handle date selection for a new booking
         select: function(start, end) {
-            var reservationDate = start.format('YYYY-MM-DD');
+            let reservationDate = start.format('YYYY-MM-DD');
             $('#date').val(reservationDate); // Set the selected date in the modal form
             $('#reservationModal').modal('show'); // Show the modal
         }
