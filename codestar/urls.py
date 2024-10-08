@@ -23,4 +23,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('home_page.urls')),  # For the homepage app
     path('booking/', include('booking.urls')),  # For the booking app
+    path('accounts/', include('django.contrib.auth.urls')),  
 ]
