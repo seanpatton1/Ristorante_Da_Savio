@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Booking
 from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta
 
 @login_required
 def booking_view(request):
