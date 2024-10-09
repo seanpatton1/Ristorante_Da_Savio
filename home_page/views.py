@@ -13,4 +13,4 @@ def menu(request):
 
 def custom_logout_view(request):
     logout(request)  # Logs the user out
-    return render(request, 'account/logout.html')
+    return redirect('home')  # Redirects to the home page
