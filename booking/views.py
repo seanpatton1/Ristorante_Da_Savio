@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Booking
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from datetime import datetime, timedelta
 
 @login_required
@@ -11,24 +12,26 @@ def booking_view(request):
 @login_required
 def make_reservation(request):
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
+        # Get the form data from POST request
         guests = request.POST.get('guests')
         date = request.POST.get('date')
         time = request.POST.get('time')
+        special_request = request.POST.get('special_request')
 
-        # Save the reservation to the database
-        Reservation.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
+        # Create a new booking
+        Booking.objects.create(
+            customer=request.user.customer,  # Assuming customer is linked to the logged-in user
+            date=date,
+            time=time,
             guests=guests,
-            reservation_date=date,
-            reservation_time=time
+            special_request=special_request,
+            status='pending',  # Default status
         )
 
-        return redirect('reservation_success')
+        # Success message and redirect to a success page or back to the calendar
+        messages.success(request, 'Your reservation has been successfully created!')
+        return redirect('booking')  
+
     return render(request, 'booking/make_reservation.html')
 
 def get_bookings(request):
