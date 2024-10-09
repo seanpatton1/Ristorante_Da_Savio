@@ -21,9 +21,10 @@ class Booking(models.Model):
     table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateField()
     time = models.TimeField()
+    end_time = models.TimeField()  
     guests = models.IntegerField()
     special_request = models.TextField(blank=True, null=True)
-    created_on = models.DateTimeField(auto_now_add=True) 
+    created_on = models.DateTimeField(auto_now_add=True)
 
     STATUS_CHOICES = (
         ('pending', 'Pending'),
@@ -31,7 +32,7 @@ class Booking(models.Model):
         ('canceled', 'Canceled'),
     )
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
-    
+
     class Meta:
         ordering = ["-created_on"]
 

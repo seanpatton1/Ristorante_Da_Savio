@@ -31,14 +31,14 @@ def make_reservation(request):
     return render(request, 'booking/make_reservation.html')
 
 def get_bookings(request):
-    bookings = Booking.objects.filter(status='confirmed')  # Filter only confirmed bookings
+    bookings = Booking.objects.filter(status='confirmed')  
     events = []
 
     for booking in bookings:
         events.append({
             'title': 'Reserved',
-            'start': f"{booking.date}T{booking.time}",
-            'end': f"{booking.date}T{booking.time}"
+            'start': booking.start_time.isoformat(),
+            'end': booking.end_time.isoformat(),  
         })
 
     return JsonResponse(events, safe=False)
