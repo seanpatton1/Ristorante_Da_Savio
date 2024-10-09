@@ -18,7 +18,6 @@ class Table(models.Model):
 
 class Booking(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateField()
     time = models.TimeField() 
     guests = models.IntegerField()

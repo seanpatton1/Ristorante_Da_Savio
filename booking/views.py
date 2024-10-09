@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Booking
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
+from django.contrib import m
 from datetime import datetime, timedelta
 
 @login_required
