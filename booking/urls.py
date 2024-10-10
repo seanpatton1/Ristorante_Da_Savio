@@ -15,4 +15,5 @@ urlpatterns = [
     path('get-bookings/', views.get_bookings, name='get_bookings'),
     path('accounts/', include('allauth.urls')),
     path('profile/', views.profile_view, name='profile'),
+    path('profile/edit/', views.edit_profile, name='profile_edit'),
 ]

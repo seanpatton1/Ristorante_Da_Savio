@@ -18,3 +18,9 @@ class CustomSignupForm(SignupForm):
             address=self.cleaned_data['address']
         )
         return user
+
+
+class CustomerForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['phone_number', 'address']
