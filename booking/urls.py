@@ -14,4 +14,5 @@ urlpatterns = [
     path('make/', views.make_reservation, name='make_reservation'),
     path('get-bookings/', views.get_bookings, name='get_bookings'),
     path('accounts/', include('allauth.urls')),
+    path('profile/', views.profile_view, name='profile'),
 ]

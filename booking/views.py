@@ -1,10 +1,25 @@
 from django.shortcuts import render, redirect
-from .models import Booking
+from .models import Booking, Customer
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 
+
+@login_required
+def profile_view(request):
+    # Get the logged-in user's customer profile
+    customer = Customer.objects.get(user=request.user)
+    
+    # Get all bookings made by the logged-in user
+    bookings = Booking.objects.filter(customer=customer)
+
+    # Pass user, customer, and booking details to the template
+    return render(request, 'booking/profile.html', {
+        'user': request.user,
+        'customer': customer,
+        'bookings': bookings,
+    })
 
 # View that renders the booking page, accessible only to logged-in users.
 @login_required

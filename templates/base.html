@@ -58,6 +58,10 @@
                     <span class="navbar-text mr-3 logged-in">You are logged in as {{ user.username }}</span>
                 </li>
                 <li class="nav-item">
+                    <!-- Link to Profile Page -->
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
                     <form method="post" action="{% url 'custom_logout' %}" id="logout-form">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-link text-light p-0">Logout</button>
