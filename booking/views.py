@@ -21,6 +21,31 @@ def profile_view(request):
         'bookings': bookings,
     })
 
+@login_required
+def edit_profile(request):
+    # Get the logged-in user's customer profile
+    customer = Customer.objects.get(user=request.user)
+    
+    if request.method == 'POST':
+        # Update User and Customer data
+        user_form = UserChangeForm(request.POST, instance=request.user)
+        customer_form = CustomerForm(request.POST, instance=customer)
+        
+        if user_form.is_valid() and customer_form.is_valid():
+            user_form.save()
+            customer_form.save()
+            messages.success(request, 'Your profile has been updated successfully.')
+            return redirect('profile')
+    else:
+        user_form = UserChangeForm(instance=request.user)
+        customer_form = CustomerForm(instance=customer)
+    
+    return render(request, 'booking/edit_profile.html', {
+        'user_form': user_form,
+        'customer_form': customer_form
+    })
+
+
 # View that renders the booking page, accessible only to logged-in users.
 @login_required
 def booking_view(request):
