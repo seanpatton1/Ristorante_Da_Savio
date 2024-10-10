@@ -44,6 +44,41 @@ def edit_profile(request):
         'user_form': user_form,
         'customer_form': customer_form
     })
+    
+@login_required
+def edit_booking(request, pk):
+    # Get the booking based on the primary key (pk) and ensure the logged-in user owns the booking
+    booking = get_object_or_404(Booking, pk=pk, customer=request.user.customer)
+    
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your booking has been updated successfully.')
+            return redirect('profile')  # Redirect back to profile page after successful edit
+    else:
+        form = BookingForm(instance=booking)
+    
+    return render(request, 'booking/edit_booking.html', {
+        'form': form,
+        'booking': booking
+    })
+
+
+@login_required
+def delete_booking(request, pk):
+    # Get the booking based on the primary key (pk) and ensure the logged-in user owns the booking
+    booking = get_object_or_404(Booking, pk=pk, customer=request.user.customer)
+    
+    if request.method == 'POST':
+        booking.delete()  # Delete the booking
+        messages.success(request, 'Your booking has been canceled.')
+        return redirect('profile')  # Redirect back to the profile page after deletion
+    
+    # If the request is GET, render a confirmation page
+    return render(request, 'booking/confirm_delete_booking.html', {
+        'booking': booking
+    })
 
 
 # View that renders the booking page, accessible only to logged-in users.
