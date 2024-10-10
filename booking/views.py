@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking, Customer
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http import JsonResponse
+from .forms import BookingForm, CustomerForm, CustomUserChangeForm
 
 
 @login_required
@@ -28,7 +29,7 @@ def edit_profile(request):
     
     if request.method == 'POST':
         # Update User and Customer data
-        user_form = UserChangeForm(request.POST, instance=request.user)
+        user_form = CustomUserChangeForm(request.POST, instance=request.user)
         customer_form = CustomerForm(request.POST, instance=customer)
         
         if user_form.is_valid() and customer_form.is_valid():
@@ -37,7 +38,7 @@ def edit_profile(request):
             messages.success(request, 'Your profile has been updated successfully.')
             return redirect('profile')
     else:
-        user_form = UserChangeForm(instance=request.user)
+        user_form = CustomUserChangeForm(instance=request.user)
         customer_form = CustomerForm(instance=customer)
     
     return render(request, 'booking/edit_profile.html', {
