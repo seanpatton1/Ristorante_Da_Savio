@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
+# Customer model linked to a User, with phone number (required) and address (optional).
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15)
@@ -9,6 +11,8 @@ class Customer(models.Model):
     def __str__(self):
         return self.user.username
 
+
+# Table model with a unique table number and seating capacity.
 class Table(models.Model):
     number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
@@ -16,6 +20,9 @@ class Table(models.Model):
     def __str__(self):
         return f"Table {self.number} (Seats {self.capacity})"
 
+
+# Booking model linking a customer to a reservation, with date, time, number of guests, and optional special requests.
+# Includes status choices (pending, confirmed, canceled) and tracks creation time.
 class Booking(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     date = models.DateField()

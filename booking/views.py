@@ -3,12 +3,18 @@ from .models import Booking
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime, timedelta
+from django.http import JsonResponse
 
+
+# View that renders the booking page, accessible only to logged-in users.
 @login_required
 def booking_view(request):
     
     return render(request, 'booking/booking.html')
 
+
+# Handles reservation creation for logged-in users. If the request is POST, it retrieves form data, creates a new booking, 
+# and redirects the user with a success message. Otherwise, it renders the reservation form page.
 @login_required
 def make_reservation(request):
     if request.method == "POST":
@@ -34,6 +40,8 @@ def make_reservation(request):
 
     return render(request, 'booking/make_reservation.html')
 
+
+# Retrieves all confirmed bookings, formats them as events with start and end times, and returns them as JSON.
 def get_bookings(request):
     bookings = Booking.objects.filter(status='confirmed')  # Filter only confirmed bookings
     events = []
@@ -53,6 +61,8 @@ def get_bookings(request):
 
     return JsonResponse(events, safe=False)
 
+
+# Renders the reservation success page, accessible only to logged-in users.
 @login_required
 def reservation_success(request):
     return render(request, 'booking/success.html')

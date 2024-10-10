@@ -2,6 +2,9 @@ from allauth.account.forms import SignupForm
 from django import forms
 from .models import Customer
 
+# Custom signup form with required phone number and optional address fields.
+# The save method creates a linked Customer object for the new User.
+
 class CustomSignupForm(SignupForm):
     phone_number = forms.CharField(max_length=15, required=True, label="Phone Number")
     address = forms.CharField(widget=forms.Textarea, required=False, label="Address")

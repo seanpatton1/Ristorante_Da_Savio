@@ -1,3 +1,5 @@
+// Initialize FullCalendar when the document is readypython3 manage.py runserver
+
 $(document).ready(function() {
     $('#calendar').fullCalendar({
         header: {
