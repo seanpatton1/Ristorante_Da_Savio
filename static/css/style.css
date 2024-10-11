@@ -19,7 +19,7 @@ main {
 .navbar {
     padding: 1.5rem 1rem;
     font-size: 1.25rem;    
-    background-color: #698269; /* Green navbar background */
+    background-color: #698269 !important; /* Green navbar background */
 }
 
 .navbar .nav-link,
@@ -58,7 +58,7 @@ main {
 .footer {
     margin-top: 0;
     padding: 0;
-    background-color: #698269; /* Green footer background */
+    background-color: #698269 !important; /* Green footer background */
     color: #F1DBBF; /* Light beige text */
     text-align: center;
 }

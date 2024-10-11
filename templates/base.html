@@ -51,12 +51,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                 </li>
+                <!-- Show Profile link only if user is logged in -->
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                 </li>
-
-                <!-- Adjusted login/logout and user info -->
-                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <span class="navbar-text mr-3 logged-in">Logged in</span>
                 </li>
