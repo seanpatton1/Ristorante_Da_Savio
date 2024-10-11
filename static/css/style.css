@@ -200,3 +200,16 @@ form {
     border-color: #B99B6B !important;
     background-color: rgba(185, 155, 107, 0.2) !important;
 }
+
+/* Styling for the food image on tablet screens */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px; 
+    }
+
+    .food-picture {
+        margin-bottom: 30px; /* Adjust the margin to create spacing below the image */
+    }
+}
