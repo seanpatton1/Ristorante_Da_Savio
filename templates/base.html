@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Updated Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Ristorante Da Savio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -51,15 +51,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
 
-                <!-- Added login/logout and user info -->
+                <!-- Adjusted login/logout and user info -->
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <span class="navbar-text mr-3 logged-in">You are logged in as {{ user.username }}</span>
-                </li>
-                <li class="nav-item">
-                    <!-- Link to Profile Page -->
-                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                    <span class="navbar-text mr-3 logged-in">Logged in</span>
                 </li>
                 <li class="nav-item">
                     <form method="post" action="{% url 'custom_logout' %}" id="logout-form">
