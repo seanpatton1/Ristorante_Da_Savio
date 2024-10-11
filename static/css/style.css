@@ -219,3 +219,16 @@ form {
     color: #F1DBBF !important;
     border: 1px solid #B99B6B;
 }
+
+/* Styling for the food image on tablet screens */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px; /* Add spacing above the image */
+    }
+
+    .food-picture {
+        margin-bottom: 30px; /* Adjust the margin to create spacing below the image */
+    }
+}
