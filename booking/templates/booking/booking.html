@@ -3,66 +3,84 @@
 
 {% block content %}
 <div class="container my-5">
-    <!-- Reservations Header Section -->
-    <div class="row">
-        <div class="col text-center">
-            <h2 class="display-4 font-weight-bold">Make a Reservation</h2>
-            <p class="lead mt-3">Book your table at Ristorante Da Savio and experience authentic Italian cuisine</p>
-        </div>
+  <!-- Reservations Header Section -->
+  <div class="row">
+    <div class="col text-center">
+      <h2 class="display-4 font-weight-bold">Make a Reservation</h2>
+      <p class="lead mt-3">Book your table at Ristorante Da Savio and experience authentic Italian cuisine</p>
     </div>
+  </div>
 
-    <!-- Availability Calendar -->
-    <div class="row mt-5">
-      <div class="col text-center">
-          <h3 class="font-weight-bold">Availability Calendar</h3>
-          <!-- Calendar container -->
-          <div id="calendar" class="mt-4"></div> <!-- This is where the calendar will render -->
+  <!-- Availability Calendar -->
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h3 class="font-weight-bold">Availability</h3>
+
+      <!-- Date Dropdown for Mobile/Tablet -->
+      <div class="d-lg-none mt-4">
+        <label for="reservation-date" class="form-label">Select a date:</label>
+        <select id="reservation-date" class="form-control">
+          <option value="2024-10-11">October 11, 2024</option>
+          <option value="2024-10-12">October 12, 2024</option>
+        </select>
       </div>
+
+      <!-- Calendar for Desktop -->
+      <div id="calendar" class="d-none d-lg-block mt-4"></div>
+    </div>
+  </div>
+
+  <!-- Picture for Tablet to fill space (visible on tablets only) -->
+  <div class="row d-none d-md-block d-lg-none mt-5">
+    <div class="col-12 text-center">
+      <img src="{% static 'images/food.jpg' %}" class="img-fluid rounded" alt="Delicious food">
+    </div>
   </div>
 </div>
 <!-- Reservation Modal -->
-<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="reservationModalLabel">Make a Reservation</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form id="reservation-form" method="POST" action="{% url 'make_reservation' %}">
-            {% csrf_token %}
-            
-            <!-- Hidden field for reservation date (set by JavaScript) -->
-            <input type="hidden" id="reservation-date" name="date">
-  
-            <!-- Time Field -->
-            <div class="form-group">
-              <label for="time">Time:</label>
-              <input type="time" class="form-control" id="time" name="time" required>
-            </div>
-  
-            <!-- Guests Field -->
-            <div class="form-group">
-              <label for="guests">Number of Guests:</label>
-              <input type="number" class="form-control" id="guests" name="guests" required>
-            </div>
-  
-            <!-- Special Request Field -->
-            <div class="form-group">
-              <label for="special_request">Special Request (Optional):</label>
-              <textarea class="form-control" id="special_request" name="special_request"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" form="reservation-form">Submit Reservation</button>
-        </div>
+<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reservationModalLabel">Make a Reservation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="reservation-form" method="POST" action="{% url 'make_reservation' %}">
+          {% csrf_token %}
+
+          <!-- Hidden field for reservation date (set by JavaScript) -->
+          <input type="hidden" id="reservation-date" name="date">
+
+          <!-- Time Field -->
+          <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+          </div>
+
+          <!-- Guests Field -->
+          <div class="form-group">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" class="form-control" id="guests" name="guests" required>
+          </div>
+
+          <!-- Special Request Field -->
+          <div class="form-group">
+            <label for="special_request">Special Request (Optional):</label>
+            <textarea class="form-control" id="special_request" name="special_request"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="reservation-form">Submit Reservation</button>
       </div>
     </div>
   </div>
+</div>
 
 {% endblock %}
 
