@@ -1,11 +1,4 @@
-/* Make header bigger */
-.navbar {
-    padding: 1.5rem 1rem; 
-    font-size: 1.25rem;    
-    background-color: #f8f9fa; 
-}
-
-/* Ensure the footer stays at the bottom of the page */
+/* General Page Layout */
 html, body {
     height: 100%;
     margin: 0;
@@ -15,37 +8,79 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    background-color: #F1DBBF; /* Light beige background */
 }
 
 main {
     flex-grow: 1; /* Make the main content area expand to fill available space */
 }
 
+/* Navbar Styling */
+.navbar {
+    padding: 1.5rem 1rem;
+    font-size: 1.25rem;    
+    background-color: #698269; /* Green navbar background */
+}
+
+.navbar .nav-link,
+.navbar-brand {
+    color: #F1DBBF !important; /* Light beige text for the links and brand */
+}
+
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+    color: #B99B6B !important; /* Tan/Beige text on hover */
+}
+
+/* Highlight the logged-in user */
 .logged-in {
-    color: #ffcc00 !important;
+    color: #F1DBBF !important; /* Light beige to match the new color scheme */
     font-weight: bold;
     padding-left: 15px;
 }
 
+/* Button Styling */
+.btn-primary,
+.btn-outline-primary {
+    background-color: #AA5656; /* Red for buttons */
+    border-color: #AA5656;
+    color: #F1DBBF !important; /* Light beige text */
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    background-color: #B99B6B; /* Tan/Beige for hover state */
+    border-color: #B99B6B;
+    color: #F1DBBF !important;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 0;
+    padding: 0;
+    background-color: #698269; /* Green footer background */
+    color: #F1DBBF; /* Light beige text */
+    text-align: center;
+}
+
+.footer a {
+    color: #F1DBBF; /* Light beige links */
+}
+
+.footer a:hover {
+    color: #B99B6B; /* Tan/Beige hover links */
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+}
+
+/* Carousel Styling */
 .carousel-item img {
     object-fit: cover; 
     width: 100%; 
     height: 100vh; 
 }
-
-.footer {
-    margin-top: 0; /* Push the footer to the bottom */
-    padding: 0;
-    background-color: #f8f9fa;
-    text-align: center; /* Center the content */
-}
-
-/* Optional styling for footer */
-.footer h5 {
-    font-size: 1.25rem;
-}
-
-/* Custom styles for carousel */
 
 .custom-carousel-caption {
     position: absolute;
@@ -56,34 +91,34 @@ main {
 }
 
 .custom-carousel-caption h3 {
-    font-size: 3rem; /* Adjust this for larger text */
+    font-size: 3rem; /* Adjust for larger text */
     font-weight: bold;
 }
 
 .custom-carousel-caption p {
-    font-size: 2rem; /* Adjust this for larger text */
+    font-size: 2rem; /* Adjust for larger text */
 }
 
+/* Text Color Adjustments */
 .text-white {
     color: #fff;
 }
 
-/* Style for the login form */
+/* Headings and Text Highlights */
+h1, h2, h3, h4, h5, h6 {
+    color: #B99B6B; /* Tan/Beige for headings */
+}
+
+p, .navbar-text, .footer-text {
+    color: #698269; /* Green for main text */
+}
+
+/* Form Styling */
 form {
-    background-color: #f8f9fa;  /* Light background */
+    background-color: #f8f9fa; /* Light background for forms */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
 }
 
 .form-control {
@@ -91,8 +126,7 @@ h2 {
     font-size: 1rem;
 }
 
-/* Style logout button to override form styling */
-
+/* Logout Button Styling */
 #logout-form {
     background-color: transparent !important;
     padding: 0 !important;
@@ -100,12 +134,10 @@ h2 {
     box-shadow: none !important;
 }
 
-/* Ensure the form behaves like an inline element */
 .logout-button-form {
     display: inline;
 }
 
-/* Styles for the logout button */
 .logout-button {
     border: 1px solid #f8d7da;  
     background-color: transparent;  
@@ -118,13 +150,13 @@ h2 {
     font-size: 1rem;
 }
 
-/* Hover effect for better user interaction */
 .logout-button:hover {
     background-color: #f8d7da;  /* Light red background on hover */
     color: #ffffff;  /* White text on hover */
     border-color: #f5c6cb;  /* Slightly darker border on hover */
 }
 
+/* Calendar Styling */
 #calendar {
     max-width: 900px;
     margin: 0 auto;
