@@ -124,3 +124,9 @@ h2 {
     color: #ffffff;  /* White text on hover */
     border-color: #f5c6cb;  /* Slightly darker border on hover */
 }
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}

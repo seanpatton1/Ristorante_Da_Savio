@@ -13,11 +13,12 @@
 
     <!-- Availability Calendar -->
     <div class="row mt-5">
-        <div class="col text-center">
-            <h3 class="font-weight-bold">Availability Calendar</h3>
-            <div id="calendar" class="mt-4"></div>
-        </div>
-    </div>
+      <div class="col text-center">
+          <h3 class="font-weight-bold">Availability Calendar</h3>
+          <!-- Calendar container -->
+          <div id="calendar" class="mt-4"></div> <!-- This is where the calendar will render -->
+      </div>
+  </div>
 </div>
 <!-- Reservation Modal -->
 <div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
@@ -67,7 +68,7 @@
 
 {% block extra_js %}
 <!-- FullCalendar JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.5/index.global.min.js"></script>
 <!-- Link to the external JavaScript file -->
 <script src="{% static 'js/calendar.js' %}"></script>
 {% endblock %}
