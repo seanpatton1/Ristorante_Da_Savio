@@ -200,35 +200,3 @@ form {
     border-color: #B99B6B !important;
     background-color: rgba(185, 155, 107, 0.2) !important;
 }
-
-.fc-day-sat, .fc-day-sun {
-    background-color: rgba(185, 155, 107, 0.1) !important; 
-}
-
-.fc-day-today {
-    background-color: rgba(255, 204, 0, 0.3) !important;
-    border: 2px solid #B99B6B important!;
-}
-
-.fc-day-number {
-    color: #000000 !important;
-}
-
-.fc-widget-header {
-    background-color: #698269 !important;
-    color: #F1DBBF !important;
-    border: 1px solid #B99B6B;
-}
-
-/* Styling for the food image on tablet screens */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .img-fluid {
-        max-width: 100%;
-        height: auto;
-        margin-top: 20px; /* Add spacing above the image */
-    }
-
-    .food-picture {
-        margin-bottom: 30px; /* Adjust the margin to create spacing below the image */
-    }
-}
