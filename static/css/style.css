@@ -30,6 +30,17 @@ main {
 .navbar .nav-link:hover,
 .navbar-brand:hover {
     color: #B99B6B !important; /* Tan/Beige text on hover */
+    font-size: 1.5rem !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F1DBBF;
+}
+
+.navbar-brand:hover {
+    color: #B99B6B;
 }
 
 /* Highlight the logged-in user */
@@ -151,14 +162,41 @@ form {
 }
 
 .logout-button:hover {
-    background-color: #f8d7da;  /* Light red background on hover */
-    color: #ffffff;  /* White text on hover */
-    border-color: #f5c6cb;  /* Slightly darker border on hover */
+    background-color: #f8d7da;
+    color: #ffffff;
+    border-color: #f5c6cb;
 }
 
+#logout-form .nav-link {
+    font-size: 1.25rem !important;
+    font-weight: normal;
+    color: #F1DBBF;
+    padding: 0 0.75rem !important;
+    text-decoration: none;
+    margin-top: 6.4px;
+}
+
+#logout-form .nav-link:hover {
+    color: #B99B6B;
+    text-decoration: none;
+}
+
+#logout-form {
+    display: inline-block;
+}
 /* Calendar Styling */
 #calendar {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+}
+
+
+.fc-day, .fc-day-top {
+    border: 1px solid #698269 !important;
+}
+
+.fc-day:hover {
+    border-color: #B99B6B !important;
+    background-color: rgba(185, 155, 107, 0.2) !important;
 }
