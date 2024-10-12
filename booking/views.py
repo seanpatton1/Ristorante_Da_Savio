@@ -47,6 +47,16 @@ def edit_profile(request):
     })
     
 @login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        # Delete the user and the associated Customer object
+        request.user.delete()
+        messages.success(request, 'Your profile has been successfully deleted.')
+        return redirect('home')  # Redirect to the home page after deletion
+    return render(request, 'booking/delete_profile.html')
+
+    
+@login_required
 def edit_booking(request, pk):
     # Get the booking based on the primary key (pk) and ensure the logged-in user owns the booking
     booking = get_object_or_404(Booking, pk=pk, customer=request.user.customer)

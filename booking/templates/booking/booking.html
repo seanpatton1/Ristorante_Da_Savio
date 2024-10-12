@@ -25,6 +25,12 @@
         </select>
       </div>
 
+      <!-- Book Now Button (Visible only on mobile and tablet) -->
+      <button type="button" class="btn btn-primary btn-block d-lg-none mt-3" id="book-now-btn" data-toggle="modal"
+        data-target="#reservationModal">
+        Make a Reservation
+      </button>
+
       <!-- Calendar for Desktop -->
       <div id="calendar" class="d-none d-lg-block mt-4"></div>
     </div>
@@ -76,7 +82,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" form="reservation-form">Submit Reservation</button>
+        <button type="submit" class="btn btn-primary btn-reserv" form="reservation-form">Submit Reservation</button>
       </div>
     </div>
   </div>

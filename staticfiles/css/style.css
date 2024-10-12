@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
 /* General Page Layout */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,29 +11,44 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #F1DBBF; /* Light beige background */
+    background-color: #F1DBBF;
+    /* Light beige background */
 }
 
 main {
-    flex-grow: 1; /* Make the main content area expand to fill available space */
+    flex-grow: 1;
+    /* Make the main content area expand to fill available space */
 }
 
 /* Navbar Styling */
 .navbar {
-    padding: 1.5rem 1rem;
-    font-size: 1.25rem;    
-    background-color: #698269 !important; /* Green navbar background */
+    padding: 2rem 1rem;
+    font-size: 1.25rem;
+    background-color: #698269 !important;
+}
+
+.navbar-dark .navbar-brand {
+    font-family: "Whisper", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
 }
 
 .navbar .nav-link,
 .navbar-brand {
-    color: #F1DBBF !important; /* Light beige text for the links and brand */
+    color: #F1DBBF !important;
+    padding: 1rem 1.5rem !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+
+    /* Keep the consistent font size */
 }
 
 .navbar .nav-link:hover,
 .navbar-brand:hover {
-    color: #B99B6B !important; /* Tan/Beige text on hover */
-    font-size: 1.5rem !important;
+    color: #B99B6B !important;
+    font-size: 1.25rem;
+    /* Avoid size change on hover */
 }
 
 .navbar-brand {
@@ -45,7 +63,7 @@ main {
 
 /* Highlight the logged-in user */
 .logged-in {
-    color: #F1DBBF !important; /* Light beige to match the new color scheme */
+    color: #F1DBBF !important;
     font-weight: bold;
     padding-left: 15px;
 }
@@ -53,14 +71,14 @@ main {
 /* Button Styling */
 .btn-primary,
 .btn-outline-primary {
-    background-color: #AA5656; /* Red for buttons */
+    background-color: #AA5656;
     border-color: #AA5656;
-    color: #F1DBBF !important; /* Light beige text */
+    color: #F1DBBF !important;
 }
 
 .btn-primary:hover,
 .btn-outline-primary:hover {
-    background-color: #B99B6B; /* Tan/Beige for hover state */
+    background-color: #B99B6B;
     border-color: #B99B6B;
     color: #F1DBBF !important;
 }
@@ -68,18 +86,18 @@ main {
 /* Footer Styling */
 .footer {
     margin-top: 0;
-    padding: 0;
-    background-color: #698269 !important; /* Green footer background */
-    color: #F1DBBF; /* Light beige text */
+    padding: 10px 0;
+    background-color: #698269 !important;
+    color: #F1DBBF;
     text-align: center;
 }
 
 .footer a {
-    color: #F1DBBF; /* Light beige links */
+    color: #F1DBBF;
 }
 
 .footer a:hover {
-    color: #B99B6B; /* Tan/Beige hover links */
+    color: #B99B6B;
 }
 
 .footer h5 {
@@ -88,26 +106,35 @@ main {
 
 /* Carousel Styling */
 .carousel-item img {
-    object-fit: cover; 
-    width: 100%; 
-    height: 100vh; 
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .custom-carousel-caption {
+    background-color: transparent !important;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .custom-carousel-caption h3 {
-    font-size: 3rem; /* Adjust for larger text */
+    font-size: 3rem;
     font-weight: bold;
 }
 
 .custom-carousel-caption p {
-    font-size: 2rem; /* Adjust for larger text */
+    font-size: 2rem;
 }
 
 /* Text Color Adjustments */
@@ -116,17 +143,24 @@ main {
 }
 
 /* Headings and Text Highlights */
-h1, h2, h3, h4, h5, h6 {
-    color: #B99B6B; /* Tan/Beige for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #B99B6B;
 }
 
-p, .navbar-text, .footer-text {
-    color: #698269; /* Green for main text */
+p,
+.navbar-text,
+.footer-text {
+    color: #698269;
 }
 
 /* Form Styling */
 form {
-    background-color: #f8f9fa; /* Light background for forms */
+    background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -150,14 +184,14 @@ form {
 }
 
 .logout-button {
-    border: 1px solid #f8d7da;  
-    background-color: transparent !important;  
-    padding: 5px 10px;  
-    border-radius: 4px;  
+    border: 1px solid #f8d7da;
+    background-color: transparent !important;
+    padding: 5px 10px;
+    border-radius: 4px;
     color: rgba(255, 255, 255, .5);
-    text-decoration: none;  
-    box-shadow: none;  
-    cursor: pointer;  
+    text-decoration: none;
+    box-shadow: none;
+    cursor: pointer;
     font-size: 1rem;
 }
 
@@ -168,10 +202,10 @@ form {
 }
 
 #logout-form .nav-link {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
     font-weight: normal;
     color: #F1DBBF !important;
-    padding: 0 0.75rem !important;
+    padding: 0.9rem 0.9rem;
     text-decoration: none;
     margin-top: 6.4px;
 }
@@ -184,6 +218,7 @@ form {
 #logout-form {
     display: inline-block;
 }
+
 /* Calendar Styling */
 #calendar {
     max-width: 900px;
@@ -191,12 +226,704 @@ form {
     padding: 20px;
 }
 
-
-.fc-day, .fc-day-top {
+.fc-day,
+.fc-day-top {
     border: 1px solid #698269 !important;
 }
 
 .fc-day:hover {
     border-color: #B99B6B !important;
     background-color: rgba(185, 155, 107, 0.2) !important;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    /* Set a fixed height */
+    max-width: 100%;
+    /* Ensure it doesn't overflow */
+    box-sizing: border-box;
+    /* Ensure proper padding and border inclusion */
+}
+
+/* General styles for menu items */
+ul.list-unstyled {
+    padding-left: 0;
+}
+
+ul.list-unstyled li {
+    padding-bottom: 15px;
+    /* Add space between each dish */
+}
+
+/* Styling the dish names */
+.dish-name {
+    font-style: italic;
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    /* Ensures the dish name occupies a consistent width */
+    padding-right: 10px;
+    /* Adds space between the dish name and the price */
+    word-wrap: break-word;
+    /* Ensure long names break properly */
+}
+
+/* Styling the prices */
+.price {
+    font-weight: bold;
+    display: inline-block;
+    width: 30%;
+    /* Ensures the price takes up a consistent width */
+    text-align: right;
+    /* Align the prices to the right */
+    vertical-align: top;
+}
+
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .quick-links {
+    text-align: left;
+    flex: 1;
+}
+
+.footer .follow-us {
+    text-align: right;
+    flex: 1;
+}
+
+.footer .col.text-center {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Styles for Smaller Screens (Mobile) */
+@media (max-width: 767px) {
+
+    .dish-name,
+    .price {
+        width: 100%;
+        /* Make each item full width on small screens */
+        display: block;
+        /* Stack dish names and prices */
+        text-align: left;
+        /* Align prices to the left for better stacking */
+        margin-bottom: 5px;
+        /* Add space below price */
+    }
+
+    .price {
+        text-align: left;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-top: 5px !important;
+    }
+
+    /* Adjust the main heading font size for mobile */
+    h2.display-4 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .lead {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    h2.display-4 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+
+    .lead {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: -20px;
+    }
+
+    .container.my-5 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #logout-form .nav-link {
+        padding: 0.9rem 1.5rem !important;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        font-size: 1.25rem;
+        background-color: #698269 !important;
+    }
+
+    .navbar-dark .navbar-brand {
+        font-family: "Whisper", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 32px;
+    }
+
+    .navbar-toggler {
+        margin-right: 20px;
+        background-color: #B99B6B;
+        border: 2px solid #698269;
+        border-radius: 5px;
+    }
+
+    .navbar-brand {
+        flex-grow: 1;
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #F1DBBF;
+        text-align: left;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar-nav .nav-item {
+        flex: 1 0 45%;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        padding: 10px;
+        border: 1px solid #B99B6B;
+        border-radius: 5px;
+        color: #F1DBBF !important;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #B99B6B;
+        color: #698269 !important;
+    }
+
+    /* Logout Button Styling */
+    #logout-form {
+        flex: 1 0 45%;
+        margin: 5px;
+    }
+
+    #logout-form .nav-link {
+        display: block;
+        padding: 10px;
+        border: 1px solid #B99B6B;
+        border-radius: 5px;
+        color: #F1DBBF;
+        text-align: center;
+        width: 100%;
+    }
+
+    #logout-form .nav-link:hover {
+        background-color: #B99B6B;
+        color: #698269 !important;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.7;
+    }
+
+    /* Centering the text in mobile view */
+    .custom-carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        color: white;
+    }
+
+    /* Center the Follow Us section and icons in mobile view */
+    .footer .col-md-6.text-right {
+        text-align: center !important;
+
+    }
+
+    .footer .col-md-6.text-right a {
+        display: inline-block;
+        margin: 0 5px;
+
+    }
+
+    /* Center the entire row on mobile */
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .footer .col-md-6.text-right a {
+        display: inline-block;
+        margin: 0 5px;
+        text-align: center !important;
+    }
+
+    .footer h5+ul {
+        margin-bottom: 30px;
+    }
+
+    .footer h5+.social-icons {
+        margin-top: 10px;
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .modal-footer .btn {
+        margin-top: 8px;
+    }
+
+    .custom-carousel-caption h3 {
+        font-family: 'Arial', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .custom-carousel-caption p {
+        font-family: 'Arial', sans-serif;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .reverse-order-md {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .img-fluid {
+        margin-bottom: 10px;
+    }
+
+    .text-muted {
+        margin-bottom: -10px;
+        padding-top: 20px;
+    }
+
+    /* Adjust row spacing on mobile */
+    .row {
+        margin-bottom: 40px;
+    }
+
+    .btn-primary {
+        margin-bottom: -60px;
+        margin-top: 45px;
+    }
+
+    .btn-about {
+        margin-top: -5px !important;
+    }
+
+    .btn-reserv {
+        margin-top: -55px !important;
+    }
+
+    .card-footer .btn {
+        width: 48%;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .card-footer {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .card {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Ensure buttons inside the card have space */
+    .card-footer a {
+        margin-bottom: 10px;
+        display: block;
+        /* Stack the buttons vertically on mobile */
+    }
+
+    /* Adjust booking list group layout */
+    .list-group-item h5 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .list-group-item p {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    /* Stack edit and cancel buttons in booking list */
+    .list-group-item .btn {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Ensure the footer buttons have spacing */
+    .card-footer .btn-primary,
+    .card-footer .btn-danger {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Stack buttons on mobile */
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-top: -60px;
+    }
+
+    .form-group textarea {
+        margin-bottom: 5px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Center the form fields and make them responsive */
+    form .form-group {
+        width: 100%;
+        max-width: 300px;
+        text-align: left;
+    }
+
+    /* Center the buttons on mobile */
+    form .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 10px;
+    }
+
+    form .form-group input,
+    form .form-group select,
+    form .form-group button {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    input.form-control,
+    textarea.form-control {
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Reduce spacing around the textarea */
+    form .form-group textarea {
+        margin-bottom: -50px;
+        margin-top: 5px;
+    }
+
+    /* Center buttons with appropriate width */
+    form .btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 5px 0;
+    }
+
+    /* Specifically for phone number field */
+    input#id_phone_number {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid rgb(118, 118, 118);
+        /* Match the border color */
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+}
+
+
+
+/* Styling for the food image on tablet screens */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .food-picture {
+        margin-bottom: 30px;
+    }
+
+    .navbar-nav .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #B99B6B;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+        width: 100%;
+        font-size: 1.25rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+        margin-left: 10px;
+    }
+
+    .navbar-toggler {
+        background-color: #B99B6B !important;
+        border: 2px solid #698269 !important;
+        border-radius: 5px;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #B99B6B !important;
+        border-radius: 5px;
+    }
+
+    .custom-carousel-caption {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        color: white;
+        padding: 0;
+    }
+
+    .custom-carousel-caption h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .custom-carousel-caption p {
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Make the images fully responsive on tablet */
+    .carousel {
+        background-color: transparent;
+    }
+
+    .carousel-item img {
+        background-color: rgba(0, 0, 0, 0.3);
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.9;
+        margin: 0;
+    }
+
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        bottom: 20px;
+        color: #fff;
+    }
+
+    .carousel-item {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Footer sections alignment */
+    .footer {
+        padding: 10px 0;
+        margin-top: 0;
+    }
+
+    .footer .col-md-6 {
+        padding: 5px 15px;
+        text-align: left;
+    }
+
+    .footer h5 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer ul li {
+        padding: 4px 0;
+        margin-bottom: 5px;
+    }
+
+    /* Styling for the Social Icons section */
+    .footer .social-icons {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .footer .col.text-center small {
+        font-size: 0.75rem;
+        /* Smaller font size for copyright */
+        display: block;
+    }
+
+    .footer .row {
+        margin-bottom: 0;
+    }
+
+    .footer .col-md-6 h5 {
+        text-align: center;
+        /* Centers the "Quick Links" title */
+        margin-bottom: 15px;
+    }
+
+    .tblt-1 {
+        margin-right: 40px;
+    }
+
+    .qck-1 {
+        margin-right: 30px;
+    }
+
+    /* Make the quick links display in a single column for tablet view */
+    .quick-links ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .quick-links ul li {
+        margin: 0 10px;
+        /* Add spacing between links */
+        text-align: center;
+    }
+
+    .quick-links .list-inline-item {
+        padding: 0 10px;
+    }
+
+    /* Align the "Follow Us" section to center instead of right for a better balance on tablet */
+    .follow-us {
+        text-align: center !important;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .follow-us a {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .follow-us h5 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Ensure the social icons are in a row below the heading */
+    .follow-us .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .footer .row.mt-3 {
+        margin-top: 20px;
+        border-top: 1px solid #B99B6B;
+        padding-top: 10px;
+    }
+}
+
+
+#logout-form .nav-link {
+    font-size: 1.25rem !important;
+    font-weight: normal;
+    color: #F1DBBF !important;
+    padding: 0.9rem 0.9rem;
+    text-decoration: none;
+    margin-top: 6.4px;
+}
+
+@media (max-width: 991px) {
+    #reservation-date {
+        padding: 10px;
+        /* Ensure proper padding */
+        font-size: 1rem;
+        /* Ensure readable text */
+        height: auto;
+        /* Let the height adjust automatically */
+        line-height: 1.5;
+        /* Adjust the line-height for the text */
+    }
 }

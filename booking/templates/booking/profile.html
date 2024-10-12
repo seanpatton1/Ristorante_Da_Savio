@@ -15,9 +15,9 @@
             <p><strong>Phone Number:</strong> {{ customer.phone_number }}</p>
             <p><strong>Address:</strong> {{ customer.address }}</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer d-flex justify-content-between">
             <a href="{% url 'profile_edit' %}" class="btn btn-primary">Edit Profile</a>
-            <a href="{%" class="btn btn-danger">Delete Profile</a>
+            <a href="{% url 'delete_profile' %}" class="btn btn-danger">Delete Profile</a>
         </div>
     </div>
 
