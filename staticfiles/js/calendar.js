@@ -30,9 +30,14 @@ $(document).ready(function() {
                     return;
                 }
 
-                $('#reservation-date').val(reservationDate);
+                // $('#reservation-date-input').val(reservationDate);
                 console.log("Selected date: " + reservationDate);
                 $('#reservationModal').modal('show');
+                document.getElementById('reservation-date-display').textContent = reservationDate;
+                document.getElementById('reservation-date-input').value = reservationDate;
+                console.log("Selected date: " + reservationDate);
+
+
             }
         });
 
