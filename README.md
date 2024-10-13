@@ -317,8 +317,9 @@ The final result is a professional, user-friendly, and responsive website that r
 ![404](static/images/404.png)
 
 
-## Deployment
+### Deployment
 
+## Heroku
 
 Deploying this project to Heroku involved several steps:
 
