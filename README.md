@@ -1,6 +1,6 @@
 # Ristorante Da Savio
 
-![Website responsive image](images/responsive.png)
+![Website responsive image](static/images/responsive-1.png)
 
 Welcome to Ristorante Da Savio – Your Culinary Journey Begins Here
 
@@ -15,9 +15,8 @@ Visit the deployed game [here](https://ristorante-da-savio-5fa53f108bbc.herokuap
 ## Table of Contents
 
 1. [User Experience (UX)](#user-experience-ux)
-    1. [Project Layout diagram](#project-goals)
-    2. [Project Goals](#project-goals)
-    3. [Implementation](#Implementation)
+    1. [Project Goals](#project-goals)
+    2. [Implementation](#Implementation)
     3. [Color Scheme](#color-scheme)
 2. [Features](#features)
     1. [Home Page](#home-page)
@@ -105,14 +104,14 @@ The final result is a professional, user-friendly, and responsive website that r
 
 - To provide balance and contrast, forms that appear to users—such as reservation or contact forms—are designed in white. This contrast not only draws the user's attention to important interactive elements but also maintains a clean and modern look, ensuring ease of use while maintaining the sophisticated feel of the restaurant's branding. The combination of these thoughtful color choices creates an inviting and elegant online experience, mirroring the ambiance of the restaurant.
 
-![Colour Image](images/colour-scheme.png)
+![Colour Image](static/images/colour%20scheme.png)
 
 
 ### Color Scheme
 
 - The database model was designed using DrawSQL, and a relational database is being managed with PostgreSQL.
 
-![Database Image](images/postgreSQL.png)
+![Database Image](static/images/postgreSQL.png)
 
 ## Features
 
@@ -235,7 +234,7 @@ The final result is a professional, user-friendly, and responsive website that r
 * Page & Functionality Testing
 
     Feature | Outcome | Pass/Fail
-    --- | --- | --- | ---
+    --- | --- | ---
     Page Carousel | Pictures change - they do not change size or alter the page in any other way. | Pass
     Log In | Unable to log in without log in details - logs in with correct details | Pass
     invalid email format | tested and was unable to submit an invalid email address in the field | Pass

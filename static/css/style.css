@@ -132,6 +132,7 @@ main {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .footer .quick-links ul li, .footer .follow-us a {
@@ -486,6 +487,10 @@ ul.list-unstyled li {
     .navbar-nav .nav-link:hover {
         background-color: #B99B6B;
         color: #698269 !important;
+    }
+
+    .log-in-sign-up {
+        margin-left: 0px !important;
     }
 
     /* Logout Button Styling */
