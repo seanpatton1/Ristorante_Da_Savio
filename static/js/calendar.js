@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let calendarEl = document.getElementById('calendar');
-    
-    if (calendarEl) {  // Ensure calendar element exists
+
+    if (calendarEl) { // Ensure calendar element exists
         let calendar = new FullCalendar.Calendar(calendarEl, {
             headerToolbar: {
                 left: 'prev,next today',
@@ -17,11 +17,11 @@ $(document).ready(function() {
                 url: '/booking/get-bookings/',
                 method: 'GET',
                 extraParams: {},
-                failure: function() {
+                failure: function () {
                     alert('There was an error while fetching events!');
                 }
             },
-            select: function(info) {
+            select: function (info) {
                 let reservationDate = info.startStr;
 
                 if (new Date(info.startStr) < new Date()) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
             }
         });
 
-        calendar.render();  // Render the calendar
+        calendar.render(); // Render the calendar
     } else {
         console.error("Calendar element not found.");
     }
@@ -52,6 +52,8 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const dateDropdown = document.getElementById('reservation-date');
+    const dateInput = document.getElementById('reservation-date-input');
+    const dateDisplay = document.getElementById('reservation-date-display');
 
     // Get today's date
     const today = new Date();
@@ -81,6 +83,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle date selection changes
     dateDropdown.addEventListener('change', function () {
-        console.log("User selected date: " + this.value);
+        const selectedDate = this.value;
+
+        // Log the selected date (optional, for debugging)
+        console.log("Selected date from dropdown: " + selectedDate);
+
+        // Set the selected date into the hidden input field for form submission
+        dateInput.value = selectedDate;
+
+        // Display the selected date in the modal
+        dateDisplay.textContent = selectedDate;
     });
+
+    // Trigger the modal on the "Make a Reservation" button click
+    document.getElementById('book-now-btn').addEventListener('click', function () {
+        const selectedDate = dateDropdown.value;
+
+        // Set the selected date into the hidden input field and display it
+        dateInput.value = selectedDate;
+        dateDisplay.textContent = selectedDate;
+
+        // Show the modal
+        $('#reservationModal').modal('show');
+    });
+});
+
+document.getElementById('guests').addEventListener('input', function () {
+    let guestsInput = parseInt(this.value);
+    if (guestsInput > 15) {
+        alert('The maximum number of guests allowed is 15.');
+        this.value = 15;
+    }
 });

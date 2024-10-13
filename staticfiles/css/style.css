@@ -569,7 +569,7 @@ ul.list-unstyled li {
     }
 
     .modal-footer .btn {
-        margin-top: 8px;
+        margin-top: 8px !important;
     }
 
     .custom-carousel-caption h3 {
