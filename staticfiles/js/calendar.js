@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
     dateDropdown.addEventListener('change', function () {
         const selectedDate = this.value;
 
-        // Log the selected date (optional, for debugging)
         console.log("Selected date from dropdown: " + selectedDate);
 
         // Set the selected date into the hidden input field for form submission
@@ -119,6 +118,6 @@ document.getElementById('guests').addEventListener('input', function () {
 $(document).ready(function () {
     // Alert fade-out script
     setTimeout(function () {
-      $('.alert').fadeOut('slow');
+        $('.alert').fadeOut('slow');
     }, 3000);
-  });
+});

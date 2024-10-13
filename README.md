@@ -105,8 +105,14 @@ The final result is a professional, user-friendly, and responsive website that r
 
 - To provide balance and contrast, forms that appear to users—such as reservation or contact forms—are designed in white. This contrast not only draws the user's attention to important interactive elements but also maintains a clean and modern look, ensuring ease of use while maintaining the sophisticated feel of the restaurant's branding. The combination of these thoughtful color choices creates an inviting and elegant online experience, mirroring the ambiance of the restaurant.
 
-![ANSI Image](images/colours.png)
+![Colour Image](images/colour-scheme.png)
 
+
+### Color Scheme
+
+- The database model was designed using DrawSQL, and a relational database is being managed with PostgreSQL.
+
+![Database Image](images/postgreSQL.png)
 
 ## Features
 
@@ -173,6 +179,8 @@ The final result is a professional, user-friendly, and responsive website that r
 
 * PostgreSQL(https://en.wikipedia.org/wiki/PostgreSQL)
 
+* Balsamiq(https://en.wikipedia.org/wiki/Balsamiq)
+
 
 ### Libraries and Programs Used
 
@@ -212,43 +220,29 @@ The final result is a professional, user-friendly, and responsive website that r
 
 - I have used [CI Python Linter](https://pep8ci.herokuapp.com/)
 
-- I was given the following errors
-
-![Linter Errors](images/linter.png)
+- I was given the following errors throughout my code which have been adjusted
 
 - E302 expected 2 blank lines, found 1
-    - To fix this I added another line, giving it the required 2 blank lines
 
 - W293 blank line contacts whitespace
-    - Removed white space through the code
 
 - E501 line too long (91 > 79 characters)
-    - As you can see from the above images there was quite a few over, I adjusted all code onto new lines where required.
 
 - W292 no newline at end of file
-    - Added new line at the end of the file
-
-- E128 continuation line under-indented for visual indent
-    - fixed indentation issue on linter and then adjusted on the run.py file
-
-![Linter No Errors](images/linter-fixed.png)
 
 ### Manual Testing
 
-* Game Testing
+* Page & Functionality Testing
 
-    Feature | Outcome | Example | Pass/Fail
+    Feature | Outcome | Pass/Fail
     --- | --- | --- | ---
-    Welcome message | When the game loads - Welcome message appears  and message asking user if they want to read instructions | ![Welcome Message](images/test-one.png) | Pass - Game screen loads as expected
-    Optional instructions | Give user the option to see instructions by pressing either Y or N - pressing Y shows the user the instructions| ![instructions](images/test-two.png) | Pass - User sees instructions
-    Optional instructions | Give user the option to see instructions by pressing either Y or N - pressing N takes the user to the difficulty selection screen | ![Difficulty Section](images/test-three.png) | Pass - User is taken to next screen, bypassing instructions.
-    User selects letter, fills in guessed letters | User enters letter - guessed letter is added to guessed letters list | ![Guessed Letters One](images/test-four.png) ![Guessed Letters Two](images/test-five.png) | Pass - Letter added
-    Confirmation message of correct letter | Message appears confirming the correct user guess | ![Correct Guess](images/test-six.png) | Pass - Message appears
-    Confirmation message of incorrect letter | Message appears confirming the incorrect user guess | ![Incorrect Guess](images/test-seven.png) | Pass - Message appears
-    Already guessed | user selects a letter already chosen - error message appears | ![Already Selected One](images/test-eight.png) ![Already Selected Two](images/test-nine.png) | Pass - Message appears
-    User enters full word | User attempts to guess the word - relevant message appears if correct or incorrect | ![Guess Full Word One](images/test-ten.png) ![Guess Full Word Two](images/test-twelve.png) ![Guess Full Word Three](images/test-eleven.png) | Pass - Message appears
-    Invalid entry | User enters incorrect character - correct error message appears | ![Invalid Character](images/test-thirteen.png) | Pass - Message appears
-    Empty data entry | User clicks enter or space and enter - message appears telling user of invalid entry | ![Invalid Character Two](images/test-fourteen.png) | Pass - Message appears
+    Page Carousel | Pictures change - they do not change size or alter the page in any other way. | Pass
+    Log In | Unable to log in without log in details - logs in with correct details | Pass
+    invalid email format | tested and was unable to submit an invalid email address in the field | Pass
+    Weak or Wismatched Passwords. | Passwords have to be the same and message appears if common/weak password | Pass
+    "Remember Me" functionality | selected "Remember Me" on multiple log in's. | Pass
+    Updating Account Details | The user is able to change details and save amended information | Pass
+    
 
 
 [Back to top ⇧](#table-of-contents)
@@ -314,7 +308,7 @@ Deploying this project to Heroku involved several steps:
 
 4. Next, I accessed the 'settings' tab located at the top of the page.
 
-6. Some apps contain sensitive data within the Gitpod workspace, which isn't present in the GitHub repository due to being intentionally protected in the .gitignore file. Although I had no data to protect, the following steps would typically be followed.
+6. Some apps contain sensitive data within the Gitpod workspace, which isn't present in the GitHub repository due to being intentionally protected in the .gitignore file. Although I had to input my DATABASE_URL and SECRET_KEY.
 
     - To do this, I would click 'reveal config vars'.
     - Fill in the key, for example: CREDS.
@@ -347,17 +341,18 @@ Go back to [Table of contents](#table-of-contents)
 
 * [CI Python Linter](https://pep8ci.herokuapp.com/#) - I used this to check for errors
 
-* [ChatGPT](https://chatgpt.com/?oai-dm=1) - I used this to create the three groups of lists
+* [ChatGPT](https://chatgpt.com/?oai-dm=1) - I used this to create the about me text.
 
 ### Content
 
-- Throughout the development process of this game, I extensively utilized walkthrough videos as valuable resources. These videos, sourced from various creators, provided invaluable insights and guidance, enabling me to grasp essential concepts and tackle challenges effectively. Specifically, I frequently referred to tutorials hosted by [Kite](https://www.youtube.com/@KiteHQ) on their YouTube channel. Their detailed explanations and demonstrations significantly contributed to my understanding and proficiency in game development. I proceeded to enhance the program by incorporating additional features such as a difficulty selection option and displaying the guessed letters.
+- Throughout the development of this project, I used the previous walkthrough as a guide while building it. I also relied on StackOverflow for solutions, and received invaluable support from my mentor and tutors, who provided excellent guidance in troubleshooting. My partner, who is Italian and knowledgeable about Italian cuisine, assisted with the content. Additionally, I watched several Bootstrap tutorials and referenced course materials for help with JavaScript.
 
 [Back to top ⇧](#table-of-contents)
 
 ## Acknowledgements
 
-- Marcel, my mentor, provided invaluable guidance throughout the process, helping me maintain focus and steering me in the right direction.
-- I'd also like to express my gratitude to my partner, who has shown remarkable patience as I've studied and worked on this project.
+- Marcel, my mentor, helped me when I was on a tight schedule due to unforseen circustances. he squeezed in time and helped me alot with the project
+- I'd also like to express my gratitude to my partner, who created the menu for me as she is italian.
+- I would also like to thank my family and friends who helped me test the website when required
 
 [Back to top ⇧](#table-of-contents)
