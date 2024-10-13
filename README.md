@@ -18,6 +18,8 @@ Visit the deployed game [here](https://ristorante-da-savio-5fa53f108bbc.herokuap
     1. [Project Goals](#project-goals)
     2. [Implementation](#Implementation)
     3. [Color Scheme](#color-scheme)
+    4. [Database Model](#database-model)
+    5. [Wireframes](#wireframes)
 2. [Features](#features)
     1. [Home Page](#home-page)
     2. [About Us](#about-Us)
@@ -27,10 +29,9 @@ Visit the deployed game [here](https://ristorante-da-savio-5fa53f108bbc.herokuap
     6. [Signup](#signup)
     7. [Login](#login)
     8. [Admin Panel](#admin-panel)
-    9. [Extra Features](#extra-features)
-    10. [Technologies Used](#technologies-used)
-    11. [Languages Used](#languages-used)
-    12. [Libraries and Programs Used](#libraries-and-programs-used)
+    9. [Technologies Used](#technologies-used)
+    10. [Languages Used](#languages-used)
+    11. [Libraries and Programs Used](#libraries-and-programs-used)
 4. [Testing](#testing)
     1. [Validator errors](#validator-errors)
     2. [Manual Testing](#manual-testing)
@@ -107,11 +108,45 @@ The final result is a professional, user-friendly, and responsive website that r
 ![Colour Image](static/images/colour%20scheme.png)
 
 
-### Color Scheme
+### Database Model
 
 - The database model was designed using DrawSQL, and a relational database is being managed with PostgreSQL.
 
 ![Database Image](static/images/postgreSQL.png)
+
+
+### Wireframes
+
+- Wireframes done on Balsamiq
+
+* Home Page
+
+![HomePage](static/images/Home-Balsamiq.png)
+
+* About
+
+![About](static/images/About-us-balsamiq.png)
+
+* Reservation
+
+![Reservation](static/images/Reservation-balsamiq.png)
+
+* Menu
+
+![Menu](static/images/Menu-balsamiq.png)
+
+* Booking
+
+![Booking](static/images/Book-balsamiq.png)
+
+* Login
+
+![Login](static/images/Login-balsamiq.png)
+
+* Profile
+
+![Profile](static/images/Profile-balsamiq.png)
+
 
 ## Features
 
@@ -119,49 +154,38 @@ The final result is a professional, user-friendly, and responsive website that r
 
 * The homepage features enticing food images accompanied by carefully selected quotes to set the tone and create an inviting atmosphere for visitors. 
 
-![Home Page](images/welcome.png)
-
 ### About Us
 
 * This section presents the restaurant's story through captivating images and includes a compelling call to action, inviting users to book their table.
-
-![About Us](images/difficulty.png)
 
 ### Reservation
 
 * On this screen, once logged in, users can book a table. A full calendar is available for desktop users, while mobile and tablet users are provided with convenient dropdown options for selecting their reservation date.
 
-![Reservation](images/instructions.png)
-
 ### Menu
 
 * This screen displays our menu, providing a detailed overview of all the options available to customers.
-
-![Menu](images/start-game-image.png)
 
 ### Profile Page
 
 * This screen presents the user with a list of all their reservations, along with options to edit or delete those reservations and update their profile if desired.
 
-![Profile Page](images/correct-answer.png)
 
 ### Signup
 
 * This page allows users to sign up, granting them access to the option of booking a table.
 
-![Signup](images/incorrect-answer.png)
 
 ### Log-in
 
 * This page allows the user to log in to their account
 
-![Log-in](images/w-message.png)
 
 ### Admin Panel
 
 * Admin privileges allow the restaurant owner to approve and edit bookings.
 
-![Admin Panel](images/l-message.png)
+![Admin Panel](static/images/admin.png)
 
 
 ## Technologies Used
@@ -180,6 +204,10 @@ The final result is a professional, user-friendly, and responsive website that r
 
 * Balsamiq(https://en.wikipedia.org/wiki/Balsamiq)
 
+### Frameworks Used
+
+* [Django](https://www.djangoproject.com/)
+    - Django is a high-level Python web framework used for building the backend of the website.
 
 ### Libraries and Programs Used
 
@@ -215,9 +243,9 @@ The final result is a professional, user-friendly, and responsive website that r
 
 ### Validator errors
 
-### Python
+- All testing complete through validators and code passes.
 
-- I have used [CI Python Linter](https://pep8ci.herokuapp.com/)
+### Python
 
 - I was given the following errors throughout my code which have been adjusted
 
@@ -241,51 +269,52 @@ The final result is a professional, user-friendly, and responsive website that r
     Weak or Wismatched Passwords. | Passwords have to be the same and message appears if common/weak password | Pass
     "Remember Me" functionality | selected "Remember Me" on multiple log in's. | Pass
     Updating Account Details | The user is able to change details and save amended information | Pass
+    Reservations In Database | THis is checked in admin and reservations are present | Pass
+    Logged In | Shows the user their profile page with booking information | Pass
+    Logged Out | User cannot view profile page and is unable to book a reservation until logged in | Pass
+    Responsivness | These pages are checked for responsiveness accross all devices | Pass
+    Bookings | Admin users are able to change status of booking which is reflected on the website to the user | Pass
+    Users | All users can only see the profile page and booking - no admin privledges shown | Pass
+    Time | User must select time within 15 minute intervals when booking | Pass
+    User Bookings | The user can see all future bookings and can edit this booking | Pass
+    Links | Links accross the page work as expected | Pass
     
-
 
 [Back to top ⇧](#table-of-contents)
 
 ## Finished Product
 
-### Game Page
-
 * Landing Page
 
-![Landing Page](images/landing-page.png)
+![Landing Page](static/images/home_page.png)
 
-* Instructions Page
+* About Page
 
-![Instruction Page](images/intructions-page.png)
+![About Page](static/images/about.png)
 
-* Difficulty Page
+* Sign-in
 
-![Difficulty Page](images/dif-selection-page.png)
+![Sign-in](static/images/sign-in.png)
 
-* Game Start Page
+* Reservation Page
 
-![Game Start Page](images/game-start-page.png)
+![Reservation Page](static/images/reservation-page.png)
 
-* Correct Guess
+* Make A Reservation
 
-![Correct Guess](images/correct-guess.png)
+![Make A Reservation](static/images/make-reservation.png)
 
-* Incorrect Guess
+* Menu
 
-![Incorrect Guess](images/incorrect-guess.png)
+![Menu](static/images/menu.png)
 
-* Game Won
+* Profile
 
-![Game Won](images/game-won.png)
+![Profile](static/images/profile.png)
 
-* Game Lost
+* 404
 
-![Game Lost](images/game-lost.png)
-
-* Play Again(No)
-
-![Play Again(No)](images/play-again-no.png)
-
+![404](static/images/404.png)
 
 
 ## Deployment
@@ -336,17 +365,26 @@ Go back to [Table of contents](#table-of-contents)
 
 ## Credits 
 
-* [Canva](https://www.canva.com/) - I used this to create the chart
+* [drawsql](https://drawsql.app/diagrams) - I used this to create the chart
 
-* [CI Python Linter](https://pep8ci.herokuapp.com/#) - I used this to check for errors
+* All Validators Mentioned - I used all of these tools to check for errors
 
 * [ChatGPT](https://chatgpt.com/?oai-dm=1) - I used this to create the about me text.
+
+* [Pexels](https://www.pexels.com/search/restaurant/) - I used this for images on the website
+
+* [JS Calendar](https://www.jsdelivr.com/package/npm/fullcalendar) - I used this package for the calendar
+
 
 ### Content
 
 - Throughout the development of this project, I used the previous walkthrough as a guide while building it. I also relied on StackOverflow for solutions, and received invaluable support from my mentor and tutors, who provided excellent guidance in troubleshooting. My partner, who is Italian and knowledgeable about Italian cuisine, assisted with the content. Additionally, I watched several Bootstrap tutorials and referenced course materials for help with JavaScript.
 
 [Back to top ⇧](#table-of-contents)
+
+### Future Implementations
+
+- Due to time constraints, there are several features that I have not implemented but plan to include in future releases. These features include the ability to book a table, a "Contact Us" form or live chat, a rating system (such as integration with Trustpilot), and an area where users can provide and save their allergy information.
 
 ## Acknowledgements
 

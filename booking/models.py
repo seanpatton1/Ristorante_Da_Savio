@@ -13,15 +13,6 @@ class Customer(models.Model):
         return self.user.username
 
 
-# Table model with a unique table number and seating capacity.
-class Table(models.Model):
-    number = models.IntegerField(unique=True)
-    capacity = models.IntegerField()
-
-    def __str__(self):
-        return f"Table {self.number} (Seats {self.capacity})"
-
-
 # Booking model linking a customer to a reservation, with date, time, number
 # of guests, and optional special requests.
 # Includes status choices (pending, confirmed, canceled)
