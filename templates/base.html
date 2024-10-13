@@ -1,5 +1,4 @@
 {% load static %}
-
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'account_login' as login_url %}
@@ -74,7 +73,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
@@ -86,7 +85,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <!-- Quick Links Column -->
-                <div class="col-md-6 quick-links">
+                <div class="col-md-4 quick-links text-md-left text-center">
                     <h5 class="qck-1">Quick Links</h5>
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#" class="text-light">Home</a></li>
@@ -95,21 +94,28 @@
                         <li class="list-inline-item"><a href="#" class="text-light tblt-1">Menu</a></li>
                     </ul>
                 </div>
-
+    
+                <!-- Contact Us Column (Centered) -->
+                <div class="col-md-4 text-center contact-us">
+                    <h5>Contact Us</h5>
+                    <p class="mb-0 text-light"><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
+                    <p class="mb-0 text-light"><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p class="mb-0 text-light"><i class="fas fa-envelope"></i> info@ristorantedasavio.com</p>
+                </div>
+    
                 <!-- Follow Us Column (Social Media) -->
-                <div class="col-md-6 text-right follow-us">
+                <div class="col-md-4 text-md-right text-center follow-us">
                     <h5>Follow Us</h5>
                     <a href="#" class="text-light mr-2"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="text-light mr-2"><i class="fab fa-twitter"></i> Twitter</a>
                     <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
-
-            <!-- Copyright Text Below Both Sections -->
+    
+            <!-- Copyright Text Below All Sections -->
             <div class="row mt-3">
                 <div class="col text-center">
-                    <small>&copy; 2024 Ristorante Da Savio. All Rights Reserved. This project is for educational
-                        purposes only.</small>
+                    <small>&copy; 2024 Ristorante Da Savio. All Rights Reserved. This project is for educational purposes only.</small>
                 </div>
             </div>
         </div>

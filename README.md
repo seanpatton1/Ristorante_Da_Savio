@@ -1,131 +1,363 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Ristorante Da Savio
 
-Welcome seanpatton1 Patton,
+![Website responsive image](images/responsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to Ristorante Da Savio – Your Culinary Journey Begins Here
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+At Ristorante Da Savio, we've created an online experience that’s as inviting as our in-house dining. Our newly designed website, powered by Django, offers a seamless and intuitive interface for all your reservation needs. Explore our seasonal menus, reserve your table with ease, and manage your bookings effortlessly through our user-friendly system.
 
-## Gitpod Reminders
+Whether you're planning an intimate dinner or a large gathering, our responsive booking platform ensures a smooth experience across all devices. Dive into the vibrant world of Italian cuisine and let us handle the rest.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Your perfect dining experience is just a few clicks away!
 
-`python3 -m http.server`
+Visit the deployed game [here](https://ristorante-da-savio-5fa53f108bbc.herokuapp.com/).
 
-A blue button should appear to click: _Make Public_,
+## Table of Contents
 
-Another blue button should appear to click: _Open Browser_.
+1. [User Experience (UX)](#user-experience-ux)
+    1. [Project Layout diagram](#project-goals)
+    2. [Project Goals](#project-goals)
+    3. [Implementation](#Implementation)
+    3. [Color Scheme](#color-scheme)
+2. [Features](#features)
+    1. [Home Page](#home-page)
+    2. [About Us](#about-Us)
+    3. [Reservation](#reservation)
+    4. [Menu](#menu)
+    5. [Profile Page](#profile-page)
+    6. [Signup](#signup)
+    7. [Login](#login)
+    8. [Admin Panel](#admin-panel)
+    9. [Extra Features](#extra-features)
+    10. [Technologies Used](#technologies-used)
+    11. [Languages Used](#languages-used)
+    12. [Libraries and Programs Used](#libraries-and-programs-used)
+4. [Testing](#testing)
+    1. [Validator errors](#validator-errors)
+    2. [Manual Testing](#manual-testing)
+5. [Finished Product](#finished-product)
+    1. [Home Page](#home-page)
+    2. [About Us](#about-Us)
+    3. [Reservation](#reservation)
+    4. [Menu](#menu)
+    5. [Profile Page](#profile-page)
+    6. [Signup](#signup)
+    7. [Login](#login)
+    8. [Admin Panel](#admin-panel)
+6. [Deployment](#deployment)
+    1. [GitHub Pages](#github-pages)
+7. [Credits](#credits)
+    1. [Content](#content)
+8. [Acknowledgements](#acknowledgements)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+***
 
-A blue button should appear to click: _Make Public_,
+## User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+### Project Goals
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- I want customers to be able to easily navigate the website and make reservations effortlessly
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - The website features a clear and intuitive layout with easy-to-use navigation. The booking system allows users to seamlessly select a date, time, and party size, and submit their reservation details in just a few clicks. The FullCalendar integration enhances user interaction by allowing them to easily select a date from the calendar.
 
-To log into the Heroku toolbelt CLI:
+- I want customers to manage their reservations (view, edit, and cancel) directly on the website.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - Once logged in, users can view their reservation history, edit their upcoming reservations, and cancel bookings if needed. This feature ensures flexibility and control for customers managing their dining plans.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- I want the website to be responsive and accessible across all devices, including mobile and tablets.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - The website is built using Bootstrap for responsive design, ensuring optimal display on various screen sizes. A drop-down date selection was added for mobile and tablet screens, with visual elements (such as food pictures) filling in space on larger devices. The design automatically adjusts to the user's device for a smooth experience.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+- I want the user registration process to be simple, with an option to include contact information during sign-up.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - The registration form was extended to request additional contact information like phone numbers. The process remains simple and user-friendly, allowing customers to sign up quickly while providing the restaurant with important details for communication.
 
-### Connecting your Mongo database
+- I want the website to have a professional and visually appealing design that reflects the restaurant's ambiance.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - The website's design uses clean aesthetics, a well-organized layout, and vibrant food images to represent the atmosphere of Ristorante Da Savio. Additionally, elements like a refined header, styled navigation bar with borders, and a centered footer for social media icons create a polished and professional look.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Implementation
 
-------
+At the outset of this project, I began by designing the core functionality of the website, including key features such as reservations, user registration, and responsiveness. This initial design, outlined in my project plan, served as the foundation upon which the website was built.
 
-## Release History
+To start, I familiarized myself with Django's structure, using official documentation and online resources to guide me through setting up models, views, and templates. I first implemented a basic layout with static pages, such as the homepage and about page, before incorporating more complex functionality, like the booking system.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Once the core of the website was in place, I focused on extending its functionality to include user authentication, profile management, and reservation editing. I also ensured that the website was responsive by utilizing Bootstrap, refining the design to cater to mobile, tablet, and desktop users.
 
-**June 18, 2024,** Add Mongo back into template
+Throughout the development process, I adhered to the initial project blueprint, making incremental adjustments to meet the specific needs of the restaurant, such as adding features like a calendar for booking and the option for users to manage their reservations.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+The final result is a professional, user-friendly, and responsive website that reflects both the vision and technical requirements laid out at the start of the project.
 
-**May 28 2024:** Fix Mongo and Links installs
 
-**April 26 2024:** Update node version to 16
+### Color Scheme
 
-**September 20 2023:** Update Python version to 3.9.17.
+- The color palette for the website has been carefully selected to reflect the atmosphere and design of the restaurant itself. Each color complements the others, creating a cohesive and visually pleasing experience that enhances the overall aesthetic. These tones work harmoniously across the site, from the headers and navigation to the footer and interactive elements.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- To provide balance and contrast, forms that appear to users—such as reservation or contact forms—are designed in white. This contrast not only draws the user's attention to important interactive elements but also maintains a clean and modern look, ensuring ease of use while maintaining the sophisticated feel of the restaurant's branding. The combination of these thoughtful color choices creates an inviting and elegant online experience, mirroring the ambiance of the restaurant.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![ANSI Image](images/colours.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Home Page
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* The homepage features enticing food images accompanied by carefully selected quotes to set the tone and create an inviting atmosphere for visitors. 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Home Page](images/welcome.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### About Us
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* This section presents the restaurant's story through captivating images and includes a compelling call to action, inviting users to book their table.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![About Us](images/difficulty.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Reservation
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* On this screen, once logged in, users can book a table. A full calendar is available for desktop users, while mobile and tablet users are provided with convenient dropdown options for selecting their reservation date.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Reservation](images/instructions.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Menu
 
-------
+* This screen displays our menu, providing a detailed overview of all the options available to customers.
 
-## FAQ about the uptime script
+![Menu](images/start-game-image.png)
 
-**Why have you added this script?**
+### Profile Page
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* This screen presents the user with a list of all their reservations, along with options to edit or delete those reservations and update their profile if desired.
 
-**How will this affect me?**
+![Profile Page](images/correct-answer.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Signup
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* This page allows users to sign up, granting them access to the option of booking a table.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Signup](images/incorrect-answer.png)
 
-**So….?**
+### Log-in
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* This page allows the user to log in to their account
 
-**Can I opt out?**
+![Log-in](images/w-message.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Admin Panel
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* Admin privileges allow the restaurant owner to approve and edit bookings.
 
-**Anything more?**
+![Admin Panel](images/l-message.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## Technologies Used
 
-Happy coding!
+### Languages Used
+
+* HTML5(https://en.wikipedia.org/wiki/HTML5)
+
+* CSS(https://en.wikipedia.org/wiki/CSS)
+
+* Python(https://en.wikipedia.org/wiki/Python_(programming_language))
+
+* JavaScript(https://en.wikipedia.org/wiki/JavaScript)
+
+* PostgreSQL(https://en.wikipedia.org/wiki/PostgreSQL)
+
+
+### Libraries and Programs Used
+
+
+* [GitPod](https://gitpod.io/)
+    - GitPod was used for writing code, committing, and then pushing to GitHub.
+
+* [GitHub](https://github.com/)
+    - GitHub was used to store the project after pushing.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/#)
+    - Am I Responsive was used to for the beggining image at the beggining of this README
+
+* [CI Python Linter](https://pep8ci.herokuapp.com/#)
+    - CI Python Linter was used to validate the Python code.
+
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    - Chrome DevTools was used during development process for code review and fix any visual errors throught the creation of the website.
+
+* [W3C Markup Validator](https://validator.w3.org/)
+    - W3C Markup Validator was used to validate the HTML code.
+
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - W3C CSS Validator was used to validate the CSS code.
+
+* [JSHint](https://jshint.com/)
+    - JSHint was used to validate the JavaScript code.
+
+[Back to top ⇧](#table-of-contents)
+
+
+## Testing
+
+### Validator errors
+
+### Python
+
+- I have used [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+- I was given the following errors
+
+![Linter Errors](images/linter.png)
+
+- E302 expected 2 blank lines, found 1
+    - To fix this I added another line, giving it the required 2 blank lines
+
+- W293 blank line contacts whitespace
+    - Removed white space through the code
+
+- E501 line too long (91 > 79 characters)
+    - As you can see from the above images there was quite a few over, I adjusted all code onto new lines where required.
+
+- W292 no newline at end of file
+    - Added new line at the end of the file
+
+- E128 continuation line under-indented for visual indent
+    - fixed indentation issue on linter and then adjusted on the run.py file
+
+![Linter No Errors](images/linter-fixed.png)
+
+### Manual Testing
+
+* Game Testing
+
+    Feature | Outcome | Example | Pass/Fail
+    --- | --- | --- | ---
+    Welcome message | When the game loads - Welcome message appears  and message asking user if they want to read instructions | ![Welcome Message](images/test-one.png) | Pass - Game screen loads as expected
+    Optional instructions | Give user the option to see instructions by pressing either Y or N - pressing Y shows the user the instructions| ![instructions](images/test-two.png) | Pass - User sees instructions
+    Optional instructions | Give user the option to see instructions by pressing either Y or N - pressing N takes the user to the difficulty selection screen | ![Difficulty Section](images/test-three.png) | Pass - User is taken to next screen, bypassing instructions.
+    User selects letter, fills in guessed letters | User enters letter - guessed letter is added to guessed letters list | ![Guessed Letters One](images/test-four.png) ![Guessed Letters Two](images/test-five.png) | Pass - Letter added
+    Confirmation message of correct letter | Message appears confirming the correct user guess | ![Correct Guess](images/test-six.png) | Pass - Message appears
+    Confirmation message of incorrect letter | Message appears confirming the incorrect user guess | ![Incorrect Guess](images/test-seven.png) | Pass - Message appears
+    Already guessed | user selects a letter already chosen - error message appears | ![Already Selected One](images/test-eight.png) ![Already Selected Two](images/test-nine.png) | Pass - Message appears
+    User enters full word | User attempts to guess the word - relevant message appears if correct or incorrect | ![Guess Full Word One](images/test-ten.png) ![Guess Full Word Two](images/test-twelve.png) ![Guess Full Word Three](images/test-eleven.png) | Pass - Message appears
+    Invalid entry | User enters incorrect character - correct error message appears | ![Invalid Character](images/test-thirteen.png) | Pass - Message appears
+    Empty data entry | User clicks enter or space and enter - message appears telling user of invalid entry | ![Invalid Character Two](images/test-fourteen.png) | Pass - Message appears
+
+
+[Back to top ⇧](#table-of-contents)
+
+## Finished Product
+
+### Game Page
+
+* Landing Page
+
+![Landing Page](images/landing-page.png)
+
+* Instructions Page
+
+![Instruction Page](images/intructions-page.png)
+
+* Difficulty Page
+
+![Difficulty Page](images/dif-selection-page.png)
+
+* Game Start Page
+
+![Game Start Page](images/game-start-page.png)
+
+* Correct Guess
+
+![Correct Guess](images/correct-guess.png)
+
+* Incorrect Guess
+
+![Incorrect Guess](images/incorrect-guess.png)
+
+* Game Won
+
+![Game Won](images/game-won.png)
+
+* Game Lost
+
+![Game Lost](images/game-lost.png)
+
+* Play Again(No)
+
+![Play Again(No)](images/play-again-no.png)
+
+
+
+## Deployment
+
+
+Deploying this project to Heroku involved several steps:
+
+1. If I installed any packages in Gitpod, I would need to add them to a requirements list.
+
+    - To accomplish this, I'd type pip3 freeze > requirements.txt and press enter. This action updates the requirements.txt file.
+    - Then, I would commit and push this to GitHub.
+    - Heroku utilizes this list to install the dependencies into the application prior to running the project.
+    - However, I didn't require any packages.
+    - I navigated to my Heroku dashboard and selected 'create a new app'.
+
+2. I selected a name for my app; each app must have a unique name. Since 'hangman' was already taken, I opted for 'hangman-terminal-game'.
+
+3. I chose my region and clicked 'create app'.
+
+4. Next, I accessed the 'settings' tab located at the top of the page.
+
+6. Some apps contain sensitive data within the Gitpod workspace, which isn't present in the GitHub repository due to being intentionally protected in the .gitignore file. Although I had no data to protect, the following steps would typically be followed.
+
+    - To do this, I would click 'reveal config vars'.
+    - Fill in the key, for example: CREDS.
+    - Then, I would copy and paste the contents of the 'CREDS' file into the value field and click 'add'.
+
+7. I included the required buildpacks by selecting the buildpack button.
+
+    - I selected 'python' and pressed 'save changes'.
+    - Then, I repeated the process, selecting 'nodejs' this time.
+    - I ensured it was done in that order, with 'python' at the top and 'nodejs' below.
+
+8. I scrolled back up to the tab at the top and clicked 'deploy'.
+
+9. I selected 'GitHub' as the deployment method and clicked 'connect to GitHub'.
+
+10. After selecting this, I searched for my GitHub repository name and connected to the correct repository.
+
+11. Then, I scrolled down, where there were two options:
+
+    - The first option is to enable automatic deployment, meaning Heroku will rebuild the app every time I push a change to GitHub.
+    - The second option is to manually deploy, which I chose for this project at the beginning and after used automatic deploys.
+
+12. Once all the code is received from GitHub, there is a 'view' button that links to the running app. I clicked this to ensure everything was running as expected.
+
+Go back to [Table of contents](#table-of-contents)
+
+## Credits 
+
+* [Canva](https://www.canva.com/) - I used this to create the chart
+
+* [CI Python Linter](https://pep8ci.herokuapp.com/#) - I used this to check for errors
+
+* [ChatGPT](https://chatgpt.com/?oai-dm=1) - I used this to create the three groups of lists
+
+### Content
+
+- Throughout the development process of this game, I extensively utilized walkthrough videos as valuable resources. These videos, sourced from various creators, provided invaluable insights and guidance, enabling me to grasp essential concepts and tackle challenges effectively. Specifically, I frequently referred to tutorials hosted by [Kite](https://www.youtube.com/@KiteHQ) on their YouTube channel. Their detailed explanations and demonstrations significantly contributed to my understanding and proficiency in game development. I proceeded to enhance the program by incorporating additional features such as a difficulty selection option and displaying the guessed letters.
+
+[Back to top ⇧](#table-of-contents)
+
+## Acknowledgements
+
+- Marcel, my mentor, provided invaluable guidance throughout the process, helping me maintain focus and steering me in the right direction.
+- I'd also like to express my gratitude to my partner, who has shown remarkable patience as I've studied and worked on this project.
+
+[Back to top ⇧](#table-of-contents)
