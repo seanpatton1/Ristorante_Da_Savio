@@ -2,6 +2,23 @@
 
 {% block content %}
 <div class="container mt-4">
+
+  <!-- MEssages -->
+  {% if messages %}
+  <div class="row">
+    <div class="col-12">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
     <h1 class="mb-4">Profile</h1>
 
     <!-- User Info Card -->
@@ -35,7 +52,7 @@
                         {% if booking.status == 'confirmed' %}
                             badge-success
                         {% elif booking.status == 'pending' %}
-                            badge- url 'profile_delete' %}warning
+                            badge- {% url 'delete_profile' %}warning
                         {% else %}
                             badge-secondary
                         {% endif %}">

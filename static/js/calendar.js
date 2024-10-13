@@ -115,3 +115,8 @@ document.getElementById('guests').addEventListener('input', function () {
         this.value = 15;
     }
 });
+
+// Alert fade-out script
+setTimeout(function() {
+    $('.alert').fadeOut('slow');
+}, 3000);

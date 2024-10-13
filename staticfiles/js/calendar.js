@@ -99,9 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('book-now-btn').addEventListener('click', function () {
         const selectedDate = dateDropdown.value;
 
-        // Log the selected date (optional, for debugging)
-        console.log("Selected date: " + selectedDate);
-
         // Set the selected date into the hidden input field and display it
         dateInput.value = selectedDate;
         dateDisplay.textContent = selectedDate;
@@ -118,3 +115,8 @@ document.getElementById('guests').addEventListener('input', function () {
         this.value = 15;
     }
 });
+
+// Alert fade-out script
+setTimeout(function() {
+    $('.alert').fadeOut('slow');
+}, 3000);
