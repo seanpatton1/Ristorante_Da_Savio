@@ -5,7 +5,8 @@ from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 from allauth.account.views import SignupView
-from .forms import BookingForm, CustomerForm, CustomUserChangeForm, CustomSignupForm
+from .forms import BookingForm, CustomerForm, CustomUserChangeForm
+from .forms import CustomSignupForm
 from django.core.exceptions import ValidationError
 
 
@@ -73,7 +74,8 @@ def delete_profile(request):
 
 @login_required
 def edit_booking(request, pk):
-    # Get the booking based on the primary key (pk) and ensure the logged-in user owns the booking
+    # Get the booking based on the primary key (pk) and ensure the logged-in
+    # user owns the booking
     booking = get_object_or_404(Booking, pk=pk, customer=request.user.customer)
 
     if request.method == 'POST':
@@ -95,7 +97,8 @@ def edit_booking(request, pk):
 
 @login_required
 def delete_booking(request, pk):
-    # Get the booking based on the primary key (pk) and ensure the logged-in user owns the booking
+    # Get the booking based on the primary key (pk) and ensure the logged-in
+    # user owns the booking
     booking = get_object_or_404(Booking, pk=pk, customer=request.user.customer)
 
     if request.method == 'POST':
@@ -117,8 +120,10 @@ def booking_view(request):
     return render(request, 'booking/booking.html')
 
 
-# Handles reservation creation for logged-in users. If the request is POST, it retrieves form data, creates a new booking,
-# and redirects the user with a success message. Otherwise, it renders the reservation form page.
+# Handles reservation creation for logged-in users. If the request is POST,
+# it retrieves form data, creates a new booking,
+# and redirects the user with a success message.
+# Otherwise, it renders the reservation form page.
 @login_required
 def make_reservation(request):
     if request.method == "POST":
@@ -130,7 +135,8 @@ def make_reservation(request):
         special_request = request.POST.get('special_request')
 
         if not date:
-            return JsonResponse({'errors': {'date': ['This field is required.']}}, status=400)
+            return JsonResponse({'errors': {'date': ['This field is required.']
+                                            }}, status=400)
 
         # Create a new booking
         Booking.objects.create(
@@ -142,14 +148,16 @@ def make_reservation(request):
             status='pending',  # Default status
         )
 
-        # Success message and redirect to a success page or back to the calendar
-        messages.success(request, 'Your reservation has been successfully created!')
-        return redirect('booking') 
+        # Success message and redirect to a success page or back
+        # to the calendar
+        messages.success(request, 'Your reservation has been successful')
+        return redirect('booking')
 
     return render(request, 'booking/make_reservation.html')
 
 
-# Retrieves all confirmed bookings, formats them as events with start and end times, and returns them as JSON.
+# Retrieves all confirmed bookings, formats them as events with start
+# and end times, and returns them as JSON.
 def get_bookings(request):
     # Filter only confirmed bookings
     bookings = Booking.objects.filter(status='confirmed')

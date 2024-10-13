@@ -6,10 +6,13 @@ from django.contrib.auth.models import User
 # Custom signup form with required phone number and optional address fields.
 # The save method creates a linked Customer object for the new User.
 
+
 class CustomSignupForm(SignupForm):
-    phone_number = forms.CharField(max_length=15, required=True, label="Phone Number")
-    address = forms.CharField(widget=forms.Textarea, required=False, label="Address")
-    
+    phone_number = forms.CharField(max_length=15, required=True,
+                                   label="Phone Number")
+    address = forms.CharField(widget=forms.Textarea, required=False,
+                              label="Address")
+
     def save(self, request):
         user = super().save(request)  # Save the User model
         # Create a Customer object and link it to the newly created User
@@ -20,17 +23,19 @@ class CustomSignupForm(SignupForm):
         )
         return user
 
+
 class CustomUserChangeForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name']  # Only allow these fields to be edited
+        # Only allow these fields to be edited
+        fields = ['username', 'email', 'first_name', 'last_name']
 
 
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = ['phone_number', 'address']
-        
+
 
 class BookingForm(forms.ModelForm):
     class Meta:

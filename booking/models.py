@@ -2,12 +2,13 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-# Customer model linked to a User, with phone number (required) and address (optional).
+# Customer model linked to a User, with phone number (required)
+# and address (optional).
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15)
     address = models.TextField(blank=True, null=True)
-    
+
     def __str__(self):
         return self.user.username
 
@@ -16,17 +17,19 @@ class Customer(models.Model):
 class Table(models.Model):
     number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
-    
+
     def __str__(self):
         return f"Table {self.number} (Seats {self.capacity})"
 
 
-# Booking model linking a customer to a reservation, with date, time, number of guests, and optional special requests.
-# Includes status choices (pending, confirmed, canceled) and tracks creation time.
+# Booking model linking a customer to a reservation, with date, time, number
+# of guests, and optional special requests.
+# Includes status choices (pending, confirmed, canceled)
+# and tracks creation time.
 class Booking(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     date = models.DateField()
-    time = models.TimeField() 
+    time = models.TimeField()
     guests = models.IntegerField()
     special_request = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -36,7 +39,8 @@ class Booking(models.Model):
         ('confirmed', 'Confirmed'),
         ('canceled', 'Canceled'),
     )
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES,
+                              default='pending')
 
     class Meta:
         ordering = ["-created_on"]
