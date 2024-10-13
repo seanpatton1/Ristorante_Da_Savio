@@ -59,7 +59,7 @@
                 <li class="nav-item">
                     <form method="post" action="{% url 'custom_logout' %}" id="logout-form" class="d-inline-block">
                         {% csrf_token %}
-                        <button type="submit" class="nav-link btn btn-link p-0">Logout</button>
+                        <button type="submit" class="nav-link btn btn-link p-0 logout-link">Logout</button>
                     </form>
                 </li>
                 {% else %}

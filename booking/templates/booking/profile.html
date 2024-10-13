@@ -25,13 +25,13 @@
     <h2>Your Bookings</h2>
 
     {% if bookings %}
-        <div class="list-group mb-4">
-            {% for booking in bookings %}
-                <div class="list-group-item">
-                    <h5 class="mb-1">Booking on {{ booking.date }} at {{ booking.time }}</h5>
-                    <p class="mb-1"><strong>Guests:</strong> {{ booking.guests }}</p>
-                    <p class="mb-1"><strong>Special Request:</strong> {{ booking.special_request }}</p>
-                    <p><strong>Status:</strong> <span class="badge 
+    <div class="list-group mb-4">
+        {% for booking in bookings %}
+        <div class="list-group-item">
+            <h5 class="mb-1">Booking on {{ booking.date }} at {{ booking.time }}</h5>
+            <p class="mb-1"><strong>Guests:</strong> {{ booking.guests }}</p>
+            <p class="mb-1"><strong>Special Request:</strong> {{ booking.special_request }}</p>
+            <p><strong>Status:</strong> <span class="badge 
                         {% if booking.status == 'confirmed' %}
                             badge-success
                         {% elif booking.status == 'pending' %}
@@ -39,15 +39,17 @@
                         {% else %}
                             badge-secondary
                         {% endif %}">
-                        {{ booking.get_status_display }}
-                    </span></p>
-                    <a href="{% url 'edit_booking' booking.id %}" class="btn btn-sm btn-secondary">Edit</a>
-                    <a href="{% url 'delete_booking' booking.id %}" class="btn btn-sm btn-danger">Cancel</a>
-                </div>
-            {% endfor %}
+                    {{ booking.get_status_display }}
+                </span></p>
+            <div class="d-flex justify-content-between mt-3">
+                <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Cancel</a>
+            </div>
         </div>
+        {% endfor %}
+    </div>
     {% else %}
-        <p class="alert alert-info">You have no bookings.</p>
+    <p class="alert alert-info">You have no bookings.</p>
     {% endif %}
 </div>
 {% endblock %}
