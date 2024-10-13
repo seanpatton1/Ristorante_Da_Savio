@@ -114,6 +114,27 @@ The final result is a professional, user-friendly, and responsive website that r
 
 ![Database Image](static/images/postgreSQL.png)
 
+1. User Table:
+ - id: A unique identifier for each user (Primary Key).
+ - Username: The username for each user, stored as a char field (string).
+ - email: The email address for each user, stored as a char field (string).
+
+2. Customer Table:
+ - id: A unique identifier for each user (Primary Key).
+ - A one-to-one relationship with the User table, indicating that each customer has exactly one associated user account.
+ - phone_number: A char field that stores the customer’s phone number.
+ - address (optional): A text field that stores the customer’s address, which can be left blank.
+
+3. Booking Table:
+ - id: A unique identifier for each user (Primary Key).
+ - customer (fk): A foreign key that links to the Customer table, establishing a many-to-one relationship
+ - date: A date field representing the booking date.
+ - time: A time field representing the time of the booking.
+ - guests: An int field storing the number of guests for the booking.
+ - special_request: A text field where customers can leave special requests (this field can be optional).
+ - created_on: A time field representing when the booking was created.
+ - status: A char field storing the status of the booking (e.g., pending, confirmed, or canceled).
+
 
 ### Wireframes
 
@@ -317,7 +338,7 @@ The final result is a professional, user-friendly, and responsive website that r
 ![404](static/images/404.png)
 
 
-### Deployment
+## Deployment
 
 ## Heroku
 
