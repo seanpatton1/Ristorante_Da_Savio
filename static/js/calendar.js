@@ -30,8 +30,14 @@ $(document).ready(function() {
                     return;
                 }
 
-                $('#reservation-date').val(reservationDate);
+                // $('#reservation-date-input').val(reservationDate);
+                console.log("Selected date: " + reservationDate);
                 $('#reservationModal').modal('show');
+                document.getElementById('reservation-date-display').textContent = reservationDate;
+                document.getElementById('reservation-date-input').value = reservationDate;
+                console.log("Selected date: " + reservationDate);
+
+
             }
         });
 
@@ -41,11 +47,10 @@ $(document).ready(function() {
     }
 });
 
-
 // Dynamic Date Dropdown Script
 // This script dynamically populates the date dropdown with the next 30 days
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const dateDropdown = document.getElementById('reservation-date');
 
     // Get today's date
@@ -55,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < 30; i++) {
         const option = document.createElement('option');
         const futureDate = new Date(today);
-        futureDate.setDate(today.getDate() + i);  // Increment the date by 'i' days
+        futureDate.setDate(today.getDate() + i); // Increment the date by 'i' days
 
         // Format the date for form submission (YYYY-MM-DD)
         const formattedDate = futureDate.toISOString().split('T')[0];
@@ -75,8 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle date selection changes
-    dateDropdown.addEventListener('change', function() {
+    dateDropdown.addEventListener('change', function () {
         console.log("User selected date: " + this.value);
-        // Add any additional functionality for date selection here
     });
 });

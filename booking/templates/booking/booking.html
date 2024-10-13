@@ -59,7 +59,9 @@
           {% csrf_token %}
 
           <!-- Hidden field for reservation date (set by JavaScript) -->
-          <input type="hidden" id="reservation-date" name="date">
+          <input type="hidden" id="reservation-date-input" name="date">
+          <p>Selected Date: <span id="reservation-date-display"></span></p>
+
 
           <!-- Time Field -->
           <div class="form-group">
