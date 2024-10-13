@@ -4,7 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http import JsonResponse
-from .forms import BookingForm, CustomerForm, CustomUserChangeForm
+from allauth.account.views import SignupView
+from .forms import BookingForm, CustomerForm, CustomUserChangeForm, CustomSignupForm
+
+class CustomSignupView(SignupView):
+    template_name = 'registration/register.html'
+    form_class = CustomSignupForm
+
+    def form_valid(self, form):
+        form.save(self.request)  # Save the user and the customer info
+        return redirect('account_login') 
 
 
 @login_required

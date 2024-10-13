@@ -2,7 +2,7 @@
 
 from django.urls import path, include
 from . import views
-from .views import delete_profile
+from .views import delete_profile, CustomSignupView
 
 
 # URL patterns for the booking app:
@@ -15,6 +15,7 @@ urlpatterns = [
     path('make/', views.make_reservation, name='make_reservation'),
     path('get-bookings/', views.get_bookings, name='get_bookings'),
     path('accounts/', include('allauth.urls')),
+    path('register/', CustomSignupView.as_view(), name='register'),
     path('profile/', views.profile_view, name='profile'),
     path('profile/edit/', views.edit_profile, name='profile_edit'),
     path('delete-profile/', delete_profile, name='delete_profile'),

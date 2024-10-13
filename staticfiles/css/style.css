@@ -47,8 +47,6 @@ main {
 .navbar .nav-link:hover,
 .navbar-brand:hover {
     color: #B99B6B !important;
-    font-size: 1.25rem;
-    /* Avoid size change on hover */
 }
 
 .navbar-brand {
@@ -111,10 +109,39 @@ main {
 
 .footer a:hover {
     color: #B99B6B;
+    margin-right: 10px;
 }
 
 .footer h5 {
-    font-size: 1.25rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer .social-icons a {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer .quick-links ul, .footer .follow-us {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer .quick-links ul li, .footer .follow-us a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* Carousel Styling */
@@ -246,6 +273,16 @@ form {
     padding: 20px;
 }
 
+.fc .fc-day-header {
+    color: black !important;
+}
+
+.fc .fc-day-number a, 
+.fc .fc-day a {
+    color: black !important;
+    text-decoration: none;
+}
+
 .fc-day,
 .fc-day-top {
     border: 1px solid #698269 !important;
@@ -302,9 +339,10 @@ ul.list-unstyled li {
 
 .footer .row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
+    text-align: center; 
 }
 
 .footer .quick-links {
@@ -321,6 +359,19 @@ ul.list-unstyled li {
     width: 100%;
     text-align: center;
     margin-top: 10px;
+}
+
+.footer .col {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    flex: 1;
+}
+
+.footer .quick-links, .footer .follow-us {
+    flex: 1;
+    max-width: 300px;
+    margin: 0 20px;
 }
 
 
@@ -554,7 +605,6 @@ ul.list-unstyled li {
     }
 
     .btn-primary {
-        margin-bottom: -60px;
         margin-top: 45px;
     }
 
