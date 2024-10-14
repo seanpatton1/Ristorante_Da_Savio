@@ -342,7 +342,7 @@ I chose Arial and Whisper as the fonts for the captions and the restaurant name.
 
 ## Deployment
 
-## Heroku
+## [Heroku](#heroku)
 
 Deploying this project to Heroku involved several steps:
 
