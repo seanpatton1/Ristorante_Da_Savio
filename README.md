@@ -107,6 +107,10 @@ The final result is a professional, user-friendly, and responsive website that r
 
 ![Colour Image](static/images/colour%20scheme.png)
 
+### Typography
+
+I chose Arial and Whisper as the fonts for the captions and the restaurant name. For the menu, I kept the default font as it complements the overall design. Sans-Serif was the backup
+
 
 ### Database Model
 
