@@ -12,12 +12,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #F1DBBF;
-    /* Light beige background */
 }
 
 main {
     flex-grow: 1;
-    /* Make the main content area expand to fill available space */
 }
 
 /* Navbar Styling */
@@ -297,11 +295,8 @@ form {
 textarea {
     width: 100%;
     height: 100px;
-    /* Set a fixed height */
     max-width: 100%;
-    /* Ensure it doesn't overflow */
     box-sizing: border-box;
-    /* Ensure proper padding and border inclusion */
 }
 
 /* General styles for menu items */
@@ -311,7 +306,6 @@ ul.list-unstyled {
 
 ul.list-unstyled li {
     padding-bottom: 15px;
-    /* Add space between each dish */
 }
 
 /* Styling the dish names */
@@ -320,11 +314,8 @@ ul.list-unstyled li {
     display: inline-block;
     vertical-align: top;
     width: 70%;
-    /* Ensures the dish name occupies a consistent width */
     padding-right: 10px;
-    /* Adds space between the dish name and the price */
     word-wrap: break-word;
-    /* Ensure long names break properly */
 }
 
 /* Styling the prices */
@@ -332,9 +323,7 @@ ul.list-unstyled li {
     font-weight: bold;
     display: inline-block;
     width: 30%;
-    /* Ensures the price takes up a consistent width */
     text-align: right;
-    /* Align the prices to the right */
     vertical-align: top;
 }
 
@@ -364,8 +353,8 @@ ul.list-unstyled li {
 
 .footer .col {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     flex: 1;
 }
 
@@ -382,13 +371,9 @@ ul.list-unstyled li {
     .dish-name,
     .price {
         width: 100%;
-        /* Make each item full width on small screens */
         display: block;
-        /* Stack dish names and prices */
         text-align: left;
-        /* Align prices to the left for better stacking */
         margin-bottom: 5px;
-        /* Add space below price */
     }
 
     .price {
@@ -983,12 +968,8 @@ ul.list-unstyled li {
 @media (max-width: 991px) {
     #reservation-date {
         padding: 10px;
-        /* Ensure proper padding */
         font-size: 1rem;
-        /* Ensure readable text */
         height: auto;
-        /* Let the height adjust automatically */
         line-height: 1.5;
-        /* Adjust the line-height for the text */
     }
 }
