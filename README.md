@@ -111,7 +111,6 @@ The final result is a professional, user-friendly, and responsive website that r
 
 I chose Arial and Whisper as the fonts for the captions and the restaurant name. For the menu, I kept the default font as it complements the overall design. Sans-Serif was the backup
 
-
 ### Database Model
 
 - The database model was designed using DrawSQL, and a relational database is being managed with PostgreSQL.
@@ -244,13 +243,13 @@ I chose Arial and Whisper as the fonts for the captions and the restaurant name.
     - GitHub was used to store the project after pushing.
 
 * [Am I Responsive?](http://ami.responsivedesign.is/#)
-    - Am I Responsive was used to for the beggining image at the beggining of this README
+    - Am I Responsive was used to for the beginning image at the beginning of this README
 
 * [CI Python Linter](https://pep8ci.herokuapp.com/#)
     - CI Python Linter was used to validate the Python code.
 
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-    - Chrome DevTools was used during development process for code review and fix any visual errors throught the creation of the website.
+    - Chrome DevTools was used during development process for code review and fix any visual errors throughtout the creation of the website.
 
 * [W3C Markup Validator](https://validator.w3.org/)
     - W3C Markup Validator was used to validate the HTML code.
@@ -289,17 +288,16 @@ I chose Arial and Whisper as the fonts for the captions and the restaurant name.
     Feature | Outcome | Pass/Fail
     --- | --- | ---
     Page Carousel | Pictures change - they do not change size or alter the page in any other way. | Pass
-    Log In | Unable to log in without log in details - logs in with correct details | Pass
+    Login  | Prevents login without details - logs in with correct credentials | Pass
     invalid email format | tested and was unable to submit an invalid email address in the field | Pass
-    Weak or Wismatched Passwords. | Passwords have to be the same and message appears if common/weak password | Pass
+    Weak or Mismatched Passwords | Passwords have to be the same and message appears if common/weak password | Pass
     "Remember Me" functionality | selected "Remember Me" on multiple log in's. | Pass
     Updating Account Details | The user is able to change details and save amended information | Pass
     Reservations In Database | THis is checked in admin and reservations are present | Pass
     Logged In | Shows the user their profile page with booking information | Pass
     Logged Out | User cannot view profile page and is unable to book a reservation until logged in | Pass
-    Responsivness | These pages are checked for responsiveness accross all devices | Pass
-    Bookings | Admin users are able to change status of booking which is reflected on the website to the user | Pass
-    Users | All users can only see the profile page and booking - no admin privledges shown | Pass
+    Responsiveness Bookings | Admin users are able to change status of booking which is reflected on the website to the user | Pass
+    Users | All users can only see the profile page and booking - no admin privileges shown | Pass
     Time | User must select time within 15 minute intervals when booking | Pass
     User Bookings | The user can see all future bookings and can edit this booking | Pass
     Links | Links accross the page work as expected | Pass
@@ -414,8 +412,8 @@ Go back to [Table of contents](#table-of-contents)
 
 ## Acknowledgements
 
-- Marcel, my mentor, helped me when I was on a tight schedule due to unforseen circustances. he squeezed in time and helped me alot with the project
-- I'd also like to express my gratitude to my partner, who created the menu for me as she is italian.
+- Marcel, my mentor, helped me when I was on a tight schedule due to unforseen circumstances. he squeezed in time and helped me alot with the project
+- I'd also like to express my gratitude to my partner, who created the menu for me, as she is Italian
 - I would also like to thank my family and friends who helped me test the website when required
 
 [Back to top ⇧](#table-of-contents)
